@@ -2,7 +2,15 @@ import Head from 'next/head'
 import Scale from "/components/animation/scale"
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
-import { useEffect,useState } from 'react';
+import Blog from "/components/pages/home/Blog";
+import Contact from "/components/pages/home/Contact";
+import Work from "/components/pages/home/Work";
+import About from "/components/pages/home/About";
+
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+import { motion,useAnimation } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -24,10 +32,6 @@ export default function Home() {
 
 
 function Body(){
-  
-  
-
-
   return(
    <div className=" w-screen bg-transparent flex justify-center   ">  
     <div className="flex flex-col  items-center    w-10/12 md:w-3/6 ">
@@ -62,27 +66,45 @@ function Body(){
       </Scale>
       </div>
 
-     <div className=" text-white pt-10 ">
-      <div>About</div>
-      <div>Work</div>
-      <div>Blog</div>
-      <div>Contact</div>
-     </div>
+    
+    <div className=" w-full">
+    <SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={2} animateDuration={1} initialLocation={100} animateLocation={0} exitLocation={0}>
+     <SecondPhase  />
+    </SlideVr>
+    </div>
+
     </div>
    </div>
   );
 }
-
 function BottomLayer(){
+
+
+ const [state,setState] = useState("");
+
   return(
       <div className="mt-36 space-x-2 md:mt-44 flex flex-row h-20 w-11/12  text-slate-200 justify-center">
-        <div className="mr-4 md:mr-0 pr-2 grid grid-rows-3 gap-0 text-right w-1/3 ">
-              <div className=" col-span-2 "><img className="ml-auto h-6 w-7" src="./svg/man.svg" /></div>
-              <div className=" col-span-2 mt-1 text-sm font-semibold">Title</div>
+        
+        <div className="block md:hidden text-white  w-80">
+          <div className="text-white text-base my-2 text-center h-10">
+            { (state == "Creative entrepreneur")           ? <Scale initialScale={0} animateScale={1} exitScale={0.8} animateDelay={0.2} animateDuration={0.5} ><SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.2} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}><p >Creative entrepreneur</p></SlideVr></Scale> : <p></p> }  
+            { (state == "South-Asia , Mumbai : Hong Kong") ? <Scale initialScale={0} animateScale={1} exitScale={0.8} animateDelay={0.2} animateDuration={0.5} ><SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.2} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}><p >South-Asia <br/> Mumbai : Hong Kong</p></SlideVr></Scale> : <p></p> }  
+            { (state == "TerranKartikTellus@gmail.com")    ? <Scale initialScale={0} animateScale={1} exitScale={0.8} animateDelay={0.2} animateDuration={0.5} ><SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.2} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}><p >TerranKartikTellus@gmail.com</p></SlideVr></Scale>    : <p></p> }  
+          </div>
+          <div className="flex flex-row justify-between my-2">
+            <button className="text-white" onClick={ ()=>{ setState("Creative entrepreneur") } }>          <img className="h-6 w-7" src="./svg/man.svg" /></button>
+            <button className="text-white" onClick={ ()=>{ setState("South-Asia , Mumbai : Hong Kong") } }><img className="h-6 w-7" src="./svg/location.svg" /></button>
+            <button className="text-white" onClick={ ()=>{ setState("TerranKartikTellus@gmail.com") } }>   <img className="h-6 w-7" src="./svg/email.svg" /></button>
+          </div>
+        </div>
+        
+        <div className="hidden md:block border-r-2 border-gray-400  md:mr-0 mr-4 pr-10 sm:pr-10 grid grid-rows-3 gap-0 text-right w-1/3 ">
+              <div className=" col-span-2 flex flex-row"><img className="ml-auto h-6 w-7" src="./svg/man.svg" /></div>
+              
               <div className=" col-span-2 text-xs font-normal ">Creative entrepreneur</div>
             </div>
 
-        <div className=" hidden md:block ">
+        <div className="border-r-2 border-gray-400 hidden md:block  sm:px-10">
             <div className=" grid grid-rows-3 gap-x-9 gap text-center">
               <div className=" col-span-2 "><img className="mx-auto h-6 w-7" src="./svg/location.svg" /></div>
               <div className=" col-span-2 mt-1 text-sm font-semibold text-clip">South-Asia</div>
@@ -90,12 +112,56 @@ function BottomLayer(){
             </div>
         </div>
 
-        <div className="w-1/3 pl-2 grid grid-rows-3 gap-0 text-left ">
-              <div className=" col-span-2 "><img className="mr-auto h-6 w-7" src="./svg/email.svg" /></div>
-              <div className=" col-span-2 mt-1 text-sm font-semibold">Email</div>
+        <div className="hidden md:block w-1/3  grid grid-rows-3 gap-0 text-left  sm:pl-10">
+              <div className=" col-span-2 flex flex-row"><img className="mr-auto h-6 w-7" src="./svg/email.svg" /></div>
+
               <div className=" col-span-2 text-xs font-normal ">TerranKartikTellus<br/>@gmail.com</div>
         </div>
 
       </div>
   );
 }
+
+const boxVariants = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+}
+
+function SecondPhase(){
+const controls = useAnimation();
+const { ref, inView } = useInView();
+
+useEffect(() => {
+  if (inView) {
+    controls.start('visible');
+  }
+  if (!inView) {
+    controls.start('hidden');
+  }
+}, [controls, inView]);
+
+return (
+<div className="flex flex-col w-">
+
+    <motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={boxVariants}>
+      <div className="bg-white text-gray-700"><About />  </div>         
+    </motion.div>  
+    <motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={boxVariants}>
+      <div className="bg-black text-gray-200"><Work />   </div>         
+    </motion.div>  
+    <motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={boxVariants}>
+      <div className="bg-white text-gray-700"><Blog />   </div>     
+    </motion.div>  
+    <motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={boxVariants}>
+     <div className="bg-black text-gray-200"><Contact /></div>       
+    </motion.div>
+
+</div>
+  );
+}
+
