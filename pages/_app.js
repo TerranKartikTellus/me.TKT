@@ -2,16 +2,16 @@ import '../styles/globals.css'
 import NavBar from "/components/commonProps/navbar"
 import Footer from "/components/commonProps/footer";
 
+
+
 function MyApp({ Component, pageProps }) {
-
-
-
   return (
-  <div className="m-0 font-OpenSans bg-neutral-900 h-screen overflow-x-hidden">
-    <NavBar />
-   <Component {...pageProps} />
-    <Footer />
+  <div className="m-0 font-OpenSans bg-neutral-900 h-screen overflow-x-hidden">  
+       <NavBar />
+         <Component {...pageProps} />
+      <Footer />
   </div>
+
   );
 }
 
