@@ -41,9 +41,8 @@ export default function Body(){
 
     
     <div className="w-screen">
-    <SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={2} animateDuration={1} initialLocation={100} animateLocation={0} exitLocation={0}>
-     <SecondPhase  />
-    </SlideVr>
+    <SecondPhase  />
+   
     </div>
 
     </div>

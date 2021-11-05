@@ -12,7 +12,7 @@ const textNormal = " hover:cursor-pointer hover:text-white            transition
 const sideIconCss = "hover:cursor-pointer h-6 w-6 md:h-7 md:w-7";
 
   return(
-    <div className="sticky top-0 z-50 px-12 py-8  font-OpenSans flex  flex-row justify-between  text-neutral-100 bg-transparent ">
+    <div className="z-0 sticky top-0  px-12 py-8  font-OpenSans flex  flex-row justify-between  text-neutral-100 bg-gradient-to-b from-gray-900 to-transparent md:bg-opacity-0 md:bg-transparent ">
         <div className=" items-start tracking-wider text-slate-400 font-semibold ">
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.2} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
            <Link href="/"><div className={ router.asPath == '/' ? textWhite : textNormal}>HOME</div></Link> 
