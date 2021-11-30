@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { motion,AnimatePresence } from "framer-motion";
 
 
 export default function Work(){
@@ -11,11 +10,11 @@ export default function Work(){
     </Head>
               <div className="flex flex-row justify-between">
                         <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Portfolio</h1>
-                        <img className="hover:scale-105 hover:shadow-xl transition duration-100 w-8 h-8" src="./svg/share_move_white.svg"></img>
+                        <img className="scale-95 opacity-95 hover:scale-100 hover:opacity-100 hover:shadow-xl transition duration-200 w-8 h-8" src="./svg/share_move_white.svg"></img>
               </div>
               <div className="justify-center items-center flex flex-col mb-14">
                        
-              <div className="mt-10 text-center text-xl font-medium">Selected projects I've worked on in the past.</div>
+              <div className="mt-10 text-center text-gray-100 text-xl font-medium">Here are a few, Interesting things I've worked on !</div>
                 
                 <div className="opacity-70 hover:opacity-100 transition-opacity duration-200 mt-16 flex flex-row  space-x-5">
                  <div className="border-r-2 border-white scale-75"><Cards/></div> 

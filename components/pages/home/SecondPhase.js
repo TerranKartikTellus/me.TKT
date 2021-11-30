@@ -1,5 +1,5 @@
 import SlideHr from "/components/animation/slideHorizontally";
-import Blog from "/components/pages/home/Blog";
+import Recommendation from "/components/pages/home/recommend";
 import Contact from "/components/pages/home/Contact";
 import Work from "/components/pages/home/Work";
 import About from "/components/pages/home/About";
@@ -21,7 +21,7 @@ return (
     <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.4} animateDuration={1} initialLocation={-100} animateLocation={0} exitLocation={0}>
     <div className="bg-white text-gray-700" style={{ 
       backgroundImage: `url("/public/3065.jpg")` 
-    }}><Blog data={data}></Blog>   </div>     
+    }}><Recommendation data={data}></Recommendation>   </div>     
    </SlideHr>
 
     <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.4} animateDuration={1} initialLocation={-100} animateLocation={0} exitLocation={0}>

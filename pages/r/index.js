@@ -1,7 +1,7 @@
 export default function blogPage(){
           return(
-                    <div>
-blog
+                    <div className="text-gray-200">
+Recommend
                     </div>
           );
 }

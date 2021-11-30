@@ -15,11 +15,16 @@ export default function Contact(){
      <div className=" p-3 pt-5 md:p-11 ">
               <div className="flex flex-row justify-between">
                         <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Contact</h1>
-                        <img className="w-8 h-8" src="./svg/share_move_white.svg"></img>
+                        <a href="/contact"><img className="scale-95 hover:scale-100 transition duration-200 opacity-95 hover:opacity-100 w-8 h-8" src="./svg/share_move_white.svg"></img></a>
               </div>
-
-              <div className="flex scale-90 flex-col md:flex-row justify-center item-center">       
-                <img className="mx-auto w-3/12" src="./svg/contactico.svg"></img>
+                <p className="text-center text-lg tracking-wider font-semibold mt-6">
+                Always good to hear from people like you
+                </p>
+                <p className="text-center tracking-wide text-sm mt-1">
+                I am Looking forward to read from u !
+                </p>
+              <div className="mt-3 flex scale-90 flex-col md:flex-row justify-center item-center">       
+                <img className="scale-90 mx-auto w-3/12" src="./svg/contactico.svg"></img>
                 <div className="mx-auto w-full mt-10">
                   <ContactForm />
                 </div>
@@ -75,7 +80,7 @@ return(
           {/* -------------- */}
           <div className="w-full ">
           
-          <input 
+          <input  
            placeholder="Name :"
            name="name" 
            type="text"
@@ -84,7 +89,7 @@ return(
                 maxLength: 50
               })
            }  
-           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
+           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
            />
            {errors.name && errors.name.type === "required" && (
             <span role="alert"><br/>Forgot to write your Name !</span>
@@ -106,7 +111,7 @@ return(
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
               })
            }  
-           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
+           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
            />
           {errors.email && errors.email.type === "required" && (
             <span role="alert"><br/>Forgot to write Email !</span>
@@ -132,7 +137,7 @@ return(
                 maxLength: 1000
               })
            }  
-           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
+           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
            />
           {errors.message && errors.message.type === "required" && (
             <span role="alert"><br/>Write me a message !</span>
@@ -146,7 +151,7 @@ return(
            
           </div>
             {/* -------------- */}
-          <button className="md:ml-20 mt-10 bg-slate-100 text-gray-900 font-semibold p-2 w-full"><SendIco/></button>
+          <button className="hover:bg-green-500 transition duration-200 hover:translate-x-1 hover:translate-y-1 md:ml-20 mt-10 bg-slate-100 text-gray-900 font-semibold p-2 w-full"><SendIco/></button>
         </form>
     </div>
   );
@@ -165,7 +170,7 @@ function IconLayer(){
   const [state, setstate] = useState("");
 
   return(
-<section className=" mt-10 ">
+<section className=" mt-3 ">
                 <div className="flex flex-col">
                 <div>
                 {(state == "Designer")           ? 
@@ -192,15 +197,15 @@ function IconLayer(){
                 </div>
                 <div className=" flex  flex-row justify-around">
                       <div  className="flex flex-col justify-center items-center">
-                        <a href="https://www.instagram.com/grew_up_at__midnight/"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/instagram.svg"></img>
+                        <a className="opacity-95 scale-100 hover:opacity-100 hover:scale-110 transition duration-150" href="https://www.instagram.com/grew_up_at__midnight/"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/instagram.svg"></img>
                         </a>
                       </div>
                       <div  className="flex flex-col justify-center items-center">
-                       <a href="https://mail.google.com/mail/u/0/?fs=1&to=terrankartiktellus@gmail.com&tf=cm&body=Hello%20Mr.%20Terran,"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/google.svg"></img>
+                       <a className="opacity-95 scale-100 hover:opacity-100 hover:scale-110 transition duration-150" href="https://mail.google.com/mail/u/0/?fs=1&to=terrankartiktellus@gmail.com&tf=cm&body=Hello%20Mr.%20Terran,"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/google.svg"></img>
                        </a>
                       </div>
                       <div  className="flex flex-col justify-center items-center">
-                       <a href="https://github.com/TerranKartikTellus"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/github.svg"></img>
+                       <a className="opacity-95 scale-100 hover:opacity-100 hover:scale-110 transition duration-150" href="https://github.com/TerranKartikTellus"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/github.svg"></img>
                        </a>
                       </div>
               </div>

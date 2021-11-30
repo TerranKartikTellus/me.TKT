@@ -2,9 +2,11 @@ import Scale from "/components/animation/scale";
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
 import { useState } from "react";
-import {mySite} from "/config/config.js"
 
-
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact(){
   return(
@@ -18,8 +20,8 @@ export default function Contact(){
               </div>
               <div className=" flex scale-90 flex-col sm:flex-row justify-center item-center">       
                 <img className="opacity-80 lg:scale-50 mx-auto w-2/12 " src="./svg/contactico.svg"></img>
-                <div className="mx-auto w-10/12 sm:w-10/12 md:w-8/12 lg:w-6/12 mt-10">
-                  <ContactForm />
+                <div className="mx-auto w-10/12 sm:w-10/12 md:w-8/12 lg:w-6/12 ">
+                  <ContactHere />
                 </div>
               </div>
               
@@ -29,75 +31,157 @@ export default function Contact(){
   );
 }
 
-
-
-
-
-function ContactForm(){
-const [values , setValues] = useState({
-  name: "",
-  email: "",
-  message: ""
-});
-
-const updateInput = (e) =>{
-  const {name,value} = e.target
-  setValues({...values , [name]:value })
-}
-const submitForm = async (e) => {
-  e.preventDefault();
-  console.log(values);
-}
-
-const [buttonOnClick,setbuttonOnclick] = useState("focus:bg-red-500 uppercase text-sm font-bold tracking-wide bg-gray-300 hover:bg-gray-900 hover:text-gray-100 text-black  p-2 rounded-sm w-full focus:outline-none focus:shadow-outline");
-
-
-
-return(
-    <div className="lg:scale-90">
-          <form  target="_blank"   action="https://formsubmit.co/terrankartiktellus@gmail.com" method="POST">
-          <div className="border-b-2 p-6">
-
-          <input type="hidden" name="_next" value={`${mySite}/thanks.js`} />
-            <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_autoresponse" value="Hey there ! Really glad to get in touch with you ! I will get back to you in just a moment" />
-          
-          <div className="text-gray-200">
-            <span className="uppercase text-sm  font-bold">Name</span>
-            <input onChange={updateInput} className="hover:bg-white-500 text-black w-full bg-gray-300  mt-2 p-2 rounded-sm focus:outline-none focus:shadow-outline"
-              type="text" name="name" required placeholder="" ></input>
-          </div>
-          <div className="mt-5">
-            <span className="uppercase text-sm  font-bold text-gray-100">Email</span>
-            <input onChange={updateInput} className="hover:bg-white-500 text-black w-full bg-gray-300  mt-2 p-2 rounded-sm focus:outline-none focus:shadow-outline"
-              type="email" name="email" />
-          </div>
-          <div className="mt-5">
-            <span className="uppercase text-sm text-gray-100  font-bold">Message</span>
-            <textarea onChange={updateInput} name="message"
-              className="hover:bg-white-500  w-full h-32 bg-gray-300 text-gray-900 mt-2 p-2 rounded-sm focus:outline-none focus:shadow-outline"></textarea>
-          </div>
-          </div>
-          <div className="border-2 p-1 mt-5">
-            <button type=" submit" 
-              className={buttonOnClick}>
-              Send Message
-            </button>
-           
-          </div>
-         </form>
-      </div>
+function ContactHere(){
+  return(
+     <div className=" p-3 pt-5 md:p-11 ">
+              
+              <div className="flex scale-90 flex-col md:flex-row justify-center item-center">       
+                
+                <div className="mx-auto w-full ">
+                  <ContactForm />
+                </div>
+              </div>
+              
+              <ToastContainer />
+    </div>
   );
 }
 
 
 
+
+
+function ContactForm(){
+
+const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+async function onSubmit(values){
+  let conf = {
+  method: 'post',
+  url: `${process.env.NEXT_PUBLIC_API_URL}/api/sendMail`,
+  headers: { 'Content-Type': 'application/json'},
+  data: values
+}
+const scrollToTop=()=> window.scrollTo({top:0,behavior: "smooth"})
+
+  const res = await axios(conf);
+  console.log(JSON.stringify(res));
+
+    if(res.status == 200){
+      console.log("Successfully Sent Email");
+      document.getElementById("theForm").reset();
+      toast.success('Message Sent !', {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
+        });
+       
+    }else{
+      console.log("Email Not Sent");
+    }
+    scrollToTop()
+}
+return(
+    <div className="mt-4 md:mt-0  ">
+        <form className=" w-full" id="theForm" onSubmit={handleSubmit(onSubmit)}>
+          {/* -------------- */}
+          <div className="w-full ">
+          
+          <input 
+           placeholder="Name :"
+           name="name" 
+           type="text"
+           {...register('name', 
+              { required: true,
+                maxLength: 50
+              })
+           }  
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
+           />
+           {errors.name && errors.name.type === "required" && (
+            <span role="alert"><br/>Forgot to write your Name !</span>
+          )}
+          {errors.name && errors.name.type === "maxLength" && (
+            <span role="alert"><br/>Max length (50) exceeded</span>
+          )}
+          </div>
+            {/* -------------- */}
+          <div className="">
+          
+          <input 
+           placeholder="Email :"
+           name="email" 
+           type="text"
+           {...register('email', 
+              { required: true,
+                maxLength: 50,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+              })
+           }  
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
+           />
+          {errors.email && errors.email.type === "required" && (
+            <span role="alert"><br/>Forgot to write Email !</span>
+          )}
+          {errors.email && errors.email.type === "maxLength" && (
+            <span role="alert"><br/>Max length (50) exceeded</span>
+          )}
+          {errors.email && errors.email.type === "pattern" && (
+            <span role="alert"><br/>Please Enter a valid Email</span>
+          )}
+         
+          </div>
+          {/* -------------- */} 
+          <div className="">
+          
+           <textarea 
+          placeholder="Message :"
+          name="message" 
+            type="text"
+            {...register('message', 
+              { required: true,
+                minLength: 10,
+                maxLength: 1000
+              })
+           }  
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
+           />
+          {errors.message && errors.message.type === "required" && (
+            <span role="alert"><br/>Write me a message !</span>
+          )}
+          {errors.message && errors.message.type === "maxLength" && (
+            <span role="alert"><br/>Max length (1000) exceeded</span>
+          )}
+          {errors.message && errors.message.type === "minLength" && (
+            <span role="alert"><br/>Min length (10) exceeded</span>
+          )}
+           
+          </div>
+            {/* -------------- */}
+          <button className="hover:bg-green-500 transition duration-200 hover:translate-x-1 hover:translate-y-1 md:ml-20 mt-10 bg-slate-100 text-gray-900 font-semibold p-2 w-full"><SendIco/></button>
+        </form>
+    </div>
+  );
+}
+
+function SendIco(){
+  return (
+    <div className="hover:opacity-80 flex flex-row justify-center items-center space-x-3">
+    <h2>Send </h2>
+    <svg className="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+    </div>
+    );
+}
+
 function IconLayer(){
   const [state, setstate] = useState("");
 
   return(
-<section className="  ">
+<section className="">
                 <div className="flex flex-col">
                 <div>
                 {(state == "Designer")           ? 
