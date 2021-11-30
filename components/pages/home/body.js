@@ -1,10 +1,10 @@
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
 import Scale from "/components/animation/scale";
-import SecondPhase from "/components/pages/home/SecondPhase"
-import BottomLayer from "/components/pages/home/BottomLayer"
+import SecondPhase from "./SecondPhase"
+import BottomLayer from "./BottomLayer"
 
-export default function Body(){
+export default function Body({data}){
   return(
    <div className=" w-screen bg-transparent flex justify-center   ">  
     <div className="flex flex-col  items-center    w-10/12 md:w-3/6 ">
@@ -41,7 +41,7 @@ export default function Body(){
 
     
     <div className="w-screen">
-    <SecondPhase  />
+    <SecondPhase data={data}></SecondPhase>
    
     </div>
 

@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function footer(){
            
           return(
-          <div className="border-t-2 border-gray-300 pt-5 my-10 flex md:flex-row md:justify-evenly  flex-col space-y-2 justify-center items-center  w-screen text-xs md:text-sm">
+          <div className="bottom-0 relative border-t-2 border-gray-300 pt-5 my-10 flex md:flex-row md:justify-evenly  flex-col space-y-2 justify-center items-center  w-screen text-xs md:text-sm">
                
                     <div className="text-gray-300 flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold">
                               <a href="terms"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110 ">Terms   </div></a>                    

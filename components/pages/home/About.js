@@ -1,52 +1,36 @@
 import Scale from "/components/animation/scale";
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
-import { motion,useAnimation } from "framer-motion";
-import { useEffect , useState } from "react";
-import { useInView } from "react-intersection-observer";
+
+import FadeInWhenVisible from "/components/animation/WhenInView/FadeInWhenVisible"
+
+
+import React from "react";
+
+
+
 
 export default function About(){
-  const [ref , inView] = useInView();
-  // assign ref to element that we want to monitor
-  // useInView become 'true' if element with ref is in view
-  // inView become 'false' if element with ref is not in view
-  
-  const animation = useAnimation();
 
-
-  useEffect(()=>{
-  if(inView)  
-  { animation.start({
-      x: 0,
-      opacity:1,
-      transition:{type: 'spring', delay: 0.2, duration: 1, bounce: 0.4}
-    }); 
-  }
-  if(!inView){
-    animation.start({
-      x: '-3000',
-      opacity: 0,
-    })
-  }
- },[inView] );
-  
 
   return(
-    <motion.div ref={ref} animate={animation} className="md:relative md:z-20 bg-gray-200 text-gray-700">
-    <AboutContent  />
-    </motion.div>
+  <div className="md:relative md:z-20 bg-gray-200 text-gray-700">
+    <FadeInWhenVisible duration={0.4}  delay={0.1} hOpacity={0}  vOpacity={1}  vX={0}  vY={0}  hX={100}  hY={500} >
+      <AboutContent  />
+    </FadeInWhenVisible>
+    </div>
   );
 }
 
 function AboutContent(){
-const [state, setstate] = useState("");
+const [state, setstate] = React.useState("");
 
   return(
     <div className="flex flex-col  mt-28  md:p-11 p-6 px-8">
                   
                   <div className=" flex flex-row justify-between">
                         <h1 className="tracking-wide font-semibold text-3xl sm:text-3xl md:text-4xl">About</h1>
-                        <a href="/about"><img className="hover:scale-105 hover:shadow-xl transition duration-100 w-8 h-8" src="./svg/share_move_black.svg"></img></a>
+                        <a href="/about"><img src="./svg/share_move_black.svg" className="hover:scale-105 hover:shadow-xl transition duration-100 w-8 h-8"></img></a>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:mt-8">
                   <div className="mx-auto hover:scale-105 hover:shadow-xl transition duration-100"><svg className="w-36 h-44 sm:w-44 sm:h-44 " xmlns="http://www.w3.org/2000/svg" fill="black" width="30" height="30" viewBox="0 0 24 24"><path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z"/></svg></div>

@@ -1,7 +1,13 @@
 import Scale from "/components/animation/scale";
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {mySite} from "/config/config.js"
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Contact(){
@@ -11,26 +17,155 @@ export default function Contact(){
                         <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Contact</h1>
                         <img className="w-8 h-8" src="./svg/share_move_white.svg"></img>
               </div>
-              <div className="relative flex flex-col justify-center items-center py-4  md:flex-row mt-6 md:mt-10 text-justify text-sm">
-                
-                <div><svg className="h-28 w-28 lg:h-36 lg:w-36 my-7" xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg></div>
-                
-                <div>
-                  <div className="w-36 py-3 text-base">    Name:  <input  className="px-2 py-3-text-black" type="text"></input> </div>
-                  <div className="w-36 py-3 text-base">   Email:  <input  className="px-2 py-3-text-black" type="text"></input> </div>
-                  <div className="w-36 py-3 text-base"> Message:  <input  className="px-2 py-3-text-black" type="text"></input> </div>
+
+              <div className="flex scale-90 flex-col md:flex-row justify-center item-center">       
+                <img className="mx-auto w-3/12" src="./svg/contactico.svg"></img>
+                <div className="mx-auto w-full mt-10">
+                  <ContactForm />
                 </div>
               </div>
               
               <IconLayer />
+              <ToastContainer />
     </div>
   );
 }
+
+
+
+
+
+function ContactForm(){
+
+const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+async function onSubmit(values){
+  let conf = {
+  method: 'post',
+  url: `${process.env.NEXT_PUBLIC_API_URL}/api/sendMail`,
+  headers: { 'Content-Type': 'application/json'},
+  data: values
+}
+const scrollToTop=()=> window.scrollTo({top:0,behavior: "smooth"})
+
+  const res = await axios(conf);
+  console.log(JSON.stringify(res));
+
+    if(res.status == 200){
+      console.log("Successfully Sent Email");
+      document.getElementById("theForm").reset();
+      toast.success('Message Sent !', {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
+        });
+       
+    }else{
+      console.log("Email Not Sent");
+    }
+    scrollToTop()
+}
+return(
+    <div className="mt-4 md:mt-0  ">
+        <form className=" w-full" id="theForm" onSubmit={handleSubmit(onSubmit)}>
+          {/* -------------- */}
+          <div className="w-full ">
+          
+          <input 
+           placeholder="Name :"
+           name="name" 
+           type="text"
+           {...register('name', 
+              { required: true,
+                maxLength: 50
+              })
+           }  
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
+           />
+           {errors.name && errors.name.type === "required" && (
+            <span role="alert"><br/>Forgot to write your Name !</span>
+          )}
+          {errors.name && errors.name.type === "maxLength" && (
+            <span role="alert"><br/>Max length (50) exceeded</span>
+          )}
+          </div>
+            {/* -------------- */}
+          <div className="">
+          
+          <input 
+           placeholder="Email :"
+           name="email" 
+           type="text"
+           {...register('email', 
+              { required: true,
+                maxLength: 50,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+              })
+           }  
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
+           />
+          {errors.email && errors.email.type === "required" && (
+            <span role="alert"><br/>Forgot to write Email !</span>
+          )}
+          {errors.email && errors.email.type === "maxLength" && (
+            <span role="alert"><br/>Max length (50) exceeded</span>
+          )}
+          {errors.email && errors.email.type === "pattern" && (
+            <span role="alert"><br/>Please Enter a valid Email</span>
+          )}
+         
+          </div>
+          {/* -------------- */} 
+          <div className="">
+          
+           <textarea 
+          placeholder="Message :"
+          name="message" 
+            type="text"
+            {...register('message', 
+              { required: true,
+                minLength: 10,
+                maxLength: 1000
+              })
+           }  
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
+           />
+          {errors.message && errors.message.type === "required" && (
+            <span role="alert"><br/>Write me a message !</span>
+          )}
+          {errors.message && errors.message.type === "maxLength" && (
+            <span role="alert"><br/>Max length (1000) exceeded</span>
+          )}
+          {errors.message && errors.message.type === "minLength" && (
+            <span role="alert"><br/>Min length (10) exceeded</span>
+          )}
+           
+          </div>
+            {/* -------------- */}
+          <button className="md:ml-20 mt-10 bg-slate-100 text-gray-900 font-semibold p-2 w-full"><SendIco/></button>
+        </form>
+    </div>
+  );
+}
+
+function SendIco(){
+  return (
+    <div className="hover:opacity-80 flex flex-row justify-center items-center space-x-3">
+    <h2>Send </h2>
+    <svg className="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+    </div>
+    );
+}
+
 function IconLayer(){
   const [state, setstate] = useState("");
 
   return(
-<section className=" mt-16 ">
+<section className=" mt-10 ">
                 <div className="flex flex-col">
                 <div>
                 {(state == "Designer")           ? 

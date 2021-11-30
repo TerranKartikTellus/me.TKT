@@ -1,0 +1,27 @@
+::-webkit-scrollbar{
+          width: 3px
+          
+}
+::-webkit-scrollbar-target {
+          background-color: red;
+          opacity: 0;
+
+}
+::-webkit-scrollbar-thumb {
+          background: whitesmoke;
+          border-radius: 3px;
+margin-right: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+          background: #fffc;
+          border-radius: 3px;
+}
+
+.hide-scroll-bar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+          display: none;
+}

@@ -21,7 +21,7 @@ const sideIconCss = "hover:cursor-pointer h-6 w-6 md:h-7 md:w-7";
            <Link href="/about"><div className={ router.asPath == '/about' ? textWhite : textNormal}>ABOUT</div></Link>   
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.3} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link href="/work"><div className={ router.asPath == '/work' ? textWhite : textNormal}>WORK</div></Link> 
+           <Link href="/portfolio"><div className={ router.asPath == '/work' ? textWhite : textNormal}>Portfolio</div></Link> 
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.35} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
             <Link href="/blog"><div className={ router.asPath == '/blog' ? textWhite : textNormal}>BLOG</div></Link> 

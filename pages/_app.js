@@ -1,4 +1,6 @@
 import '../styles/globals.css'
+import '../styles/scrollbar.css'
+
 import NavBar from "/components/commonProps/navbar"
 import Footer from "/components/commonProps/footer";
 
@@ -16,3 +18,6 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+
+
+
