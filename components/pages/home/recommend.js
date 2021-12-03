@@ -24,7 +24,7 @@ export default function Blog({data}){
                   items.map(e=>(
 
 
-                       <div class="block p-4 ">
+                       <div class="block p-4 scale-95 hover:scale-100 transition duration-200 bg-opacity-95 hover:bg-opacity-100">
                          <div
                            class="w-80  max-w-xs overflow-hidden ">
 
@@ -32,11 +32,11 @@ export default function Blog({data}){
                             
                             <div key={e.id} className="scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
                                <a target="_blank" className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
-                               <div className="bg-slate-800 rounded-tr-3xl rounded-bl-3xl shadow-lg ring-2 ring-gray-500 p-3 hover:translate-y-1 hover:translate-x-1 hover:shadow-2xl transition duration-300 ease-in-out opacity-100 flex flex-col ">
+                               <div className="bg-slate-100 rounded-tr-3xl rounded-bl-3xl shadow-lg ring-2 ring-gray-500 p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
 
-                               <img className="rounded-t-md  shadow-md" src={e.snippet.thumbnails.standard.url}></img>
+                               <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.high.url}></img>
 
-                               <div className="h-56  py-7 px-10  bg-gray-900 rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
+                               <div className="h-56  py-7 px-10  bg-gray-900 rounded-bl-3xl  flex flex-col justify-between leading-normal">
                                 <div className="mb-8 ">
                                   <p className="text-sm text-gray-100 flex items-center">
                                     <svg className="fill-current text-gray-50 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -44,7 +44,7 @@ export default function Blog({data}){
                                     </svg>
                                     <p className="text-sm">{ formatKind(e.kind) }</p>
                                   </p>
-                                  <div className="text-gray-50 font-bold text-lg mb-2">{e.snippet.title}</div>
+                                  <div className="text-gray-50 font-semibold text-lg mb-2">{e.snippet.title}</div>
 
                                 </div>
                                 <div className="flex items-center">
@@ -58,23 +58,16 @@ export default function Blog({data}){
                               </div>
                              </a>
                             </div>
-
-
-
-
                            </div>
-                       </div>
-                     
-
-                  
-                  
-                
+                       </div>      
                 ))}
+
+                
                      </div>
                    </div>
+                   
                   </div>
              
-              
     </div>
   );
 }

@@ -6,7 +6,7 @@ import SlideHr from "/components/animation/slideHorizontally";
 
 export default function NavBar(){
 const router = useRouter();
-const textWhite =  "scale-105 hover:scale-110 opacity-95 hover:opacity-100 hover:cursor-pointer hover:text-white text-white transition duration-200 text-sm font-bold";
+const textWhite =  " scale-105 hover:scale-110 opacity-95 hover:opacity-100 hover:cursor-pointer hover:text-white text-white transition duration-200 text-sm font-bold";
 const textNormal = "hover:scale-105 opacity-95 hover:opacity-100  hover:cursor-pointer hover:text-white            transition duration-200 text-xs md:text-sm";
 
 const sideIconCss = "hover:cursor-pointer h-6 w-6 md:h-7 md:w-7";
@@ -24,7 +24,7 @@ const sideIconCss = "hover:cursor-pointer h-6 w-6 md:h-7 md:w-7";
            <Link href="/portfolio"><div className={ router.asPath == '/work' ? textWhite : textNormal}>Portfolio</div></Link> 
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.35} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-            <Link href="/blog"><div className={ router.asPath == '/blog' ? textWhite : textNormal}>BLOG</div></Link> 
+            <Link href="/Recommendations"><div className={ router.asPath == '/Recommendations' ? textWhite : textNormal}>RECOMMENDATIONS</div></Link> 
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.4} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
            <Link href="/contact"><div className={ router.asPath == '/contact' ? textWhite : textNormal }>GET IN TOUCH</div></Link>     
