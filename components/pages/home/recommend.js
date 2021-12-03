@@ -15,7 +15,7 @@ export default function Blog({data}){
      <div className="block p-3 pt-5  bg-gray-200">
               <div className="flex flex-row p-5 justify-between">
                         <h1 className="tracking-wide  font-OpenSans font-bold text-2xl sm:text-2xl md:text-2xl">Recommendations</h1>
-                        <a href="/r"><img className="w-8 h-8 scale-95 opacity-95 hover:scale-100 hover:opacity-100 transition duration-150" src="./svg/share_move_black.svg"></img></a>
+                        <a href="/Recommendations"><img className="w-8 h-8 scale-95 opacity-95 hover:scale-100 hover:opacity-100 transition duration-150" src="./svg/share_move_black.svg"></img></a>
               </div>
              <div class="flex flex-col ">
                    <div class="flex overflow-x-scroll  hide-scroll-bar " >
