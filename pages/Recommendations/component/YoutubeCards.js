@@ -2,7 +2,7 @@ import SlideVr from "/components/animation/slideVertically";
 
 
 
-export function YoutubeCards({YTdata}){
+export default function  YoutubeCards({YTdata}){
       const items=YTdata.items;
       
       return(
