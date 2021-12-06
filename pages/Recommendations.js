@@ -37,7 +37,7 @@ const [state, setstate] = useState("youtube");
                       
                          </Head>
 
-                     <div className="max-w-full ">
+                     <div className="max-w-full bg-gray-900">
                         
                         <div className="w-screen flex  flex-col ">
                               <div className="w-screen  flex overflow-x-scroll hide-scroll-bar ">
