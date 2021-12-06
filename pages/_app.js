@@ -4,16 +4,21 @@ import '../styles/scrollbar.css'
 import NavBar from "/components/commonProps/navbar"
 import Footer from "/components/commonProps/footer";
 
+import { SessionProvider } from "next-auth/react"
 
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+    
+  
   return (
-  <div className="m-0 antialiased font-OpenSans bg-neutral-900 h-screen overflow-x-hidden">  
+  <SessionProvider session={session}>
+  
+   <div className="m-0 antialiased font-OpenSans bg-neutral-900 h-screen overflow-x-hidden">  
        <NavBar />
          <Component {...pageProps} />
       <Footer />
-  </div>
-
+   </div>
+  
+  </SessionProvider>
   );
 }
 

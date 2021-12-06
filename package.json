@@ -13,6 +13,7 @@
     "axios": "^0.24.0",
     "framer-motion": "^4.1.17",
     "next": "11.1.2",
+    "next-auth": "^4.0.2",
     "nodemailer": "^6.7.1",
     "react": "17.0.2",
     "react-custom-scrollbars": "^4.2.1",
@@ -21,6 +22,7 @@
     "react-intersection-observer": "^8.32.2",
     "react-scroll": "^1.8.4",
     "react-toastify": "^8.1.0",
+    "sqlite3": "^5.0.2",
     "tailwindcss-scroll-snap": "^1.1.0"
   },
   "devDependencies": {
