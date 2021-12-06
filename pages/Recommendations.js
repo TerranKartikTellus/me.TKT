@@ -20,7 +20,6 @@ export async function getServerSideProps(context) {
     props: {
       YTdata
     },
-    fallback: false,
   }
 }
 
