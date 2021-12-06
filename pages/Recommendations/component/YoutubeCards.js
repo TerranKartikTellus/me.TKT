@@ -17,7 +17,7 @@ export default function  YoutubeCards({YTdata}){
                   <div className="w-72 rounded-b-xl  bg-slate-100 shadow-lg ">
                         <div className="px-4"><p className="font-semibold text-lg  line-clamp-2">{item.snippet.title}</p> </div>
                         <div className="px-4 transition duration-150 ease-in-out justify-start space-x-3 hover:scale-105"><a className="flex flex-row" href={`https://www.youtube.com/channel/${item.snippet.videoOwnerChannelId}`}><p className="font-medium text-base truncate mb-2 my-auto">From: {item.snippet.videoOwnerChannelTitle}</p><img className=" w-5 h-5 ml-2" src="./svg/share_move_black.svg" /></a>  </div>   
-                        <a className="" target="_blank" href={"https://www.youtube.com/watch?v="+item.snippet.resourceId.videoId}>       
+                        <a className="" target="_blank" rel="noreferrer" href={"https://www.youtube.com/watch?v="+item.snippet.resourceId.videoId}>       
                         <div className="mt-20 flex flex-row justify-center rounded-b-xl items-center hover:bg-slate-200 text-slate-100 hover:text-slate-900 transition duration-200 ease-in bg-gray-900">
                               <p className="font-medium text-lg    truncate  tracking-wider text-center">OPEN</p>
                               <div className="fill-current  ml-2">
