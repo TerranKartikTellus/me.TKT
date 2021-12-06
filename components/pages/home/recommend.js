@@ -18,21 +18,21 @@ export default function Blog({data}){
                         <h1 className="tracking-wide  font-OpenSans font-bold text-2xl sm:text-2xl md:text-2xl">Recommendations</h1>
                         <a href="/Recommendations"><img className="w-8 h-8 scale-95 opacity-95 hover:scale-100 hover:opacity-100 transition duration-150" src="./svg/share_move_black.svg"></img></a>
               </div>
-             <div class="flex flex-col ">
-                   <div class="flex overflow-x-scroll  hide-scroll-bar " >
-                     <div class="flex flex-nowrap  "    >
+             <div className="flex flex-col ">
+                   <div className="flex overflow-x-scroll  hide-scroll-bar " >
+                     <div className="flex flex-nowrap  "    >
                 { 
                   items.map(e=>(
 
 
-                       <div class="block p-4 scale-95 hover:scale-100 transition duration-200 bg-opacity-95 hover:bg-opacity-100">
+                       <div key={e.id} className="block p-4 scale-95 hover:scale-100 transition duration-200 bg-opacity-95 hover:bg-opacity-100">
                          <div
-                           class="w-80  max-w-xs overflow-hidden ">
+                           className="w-80  max-w-xs overflow-hidden ">
 
                             
                             
-                            <div key={e.id} className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
-                               <a target="_blank" className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
+                            <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
+                               <a target="_blank"  className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
                                <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl shadow-md hover:shadow-xl  p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
 
                                <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.high.url}></img>

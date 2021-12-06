@@ -1,7 +1,7 @@
 import YoutubeIco from "./Recommendations/component/YoutubeIco.js"
 import OtherIco from "./Recommendations/component/OtherIco.js"
-import YoutubeCards from "./Recommendations/component/YoutubeCards.js"
-import OtherCards from "./Recommendations/component/OtherCards.js"
+import YoutubeCards from "./Recommendations/component/YoutubeCards"
+import OtherCards from "./Recommendations/component/OtherCards"
 import { AnimatePresence } from "framer-motion"
 import SlideHr from "/components/animation/slideHorizontally"
 

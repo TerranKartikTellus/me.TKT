@@ -1,28 +1,19 @@
-export default function About({data}){
+export default function about({data}){
   console.log(data);
+
   return (
-    <div className=" text-slate-50">
-      {
-       data.map((d) => (
-        
-        <li key={d.id}>{d.id} : {d.title}</li>
-        ))
-      }
+    <div className="text-gray-100">
+      about
     </div>
   );
 }
 
-export async function getStaticProps(context) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/`)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  
+export async function getServerSideProps(){
+  const res = await fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLZPuM9vAbtXs4QAvoONWzN4wuhvAHazvx&maxResults=10&key=AIzaSyCEJ0HhrD58nKkAknhfY4YT1g-JohZW7ts")
+  const data = await res.json();
+  console.log(data);
   return {
-    props: { data }, // will be passed to the page component as props
+    props: {data},
   }
 }
+
