@@ -1,7 +1,7 @@
 import Scale from "/components/animation/scale";
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import {mySite} from "/config/config.js"
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -10,20 +10,28 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+import React from "react";
+
 export default function Contact(){
+    
+  
+
+
   return(
-     <div className=" p-3 pt-5 md:p-11 ">
+     <div   className=" p-3 pt-5 md:p-11 ">
               <div className="flex flex-row justify-between">
                         <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Contact</h1>
+                       
                         <a href="/contact"><img className="scale-95 hover:scale-100 transition duration-200 opacity-95 hover:opacity-100 w-8 h-8" src="./svg/share_move_white.svg"></img></a>
+                       
               </div>
-                <p className="text-center text-lg tracking-wider font-semibold mt-6">
+                <p  className="text-center text-lg tracking-wider font-semibold mt-6">
                 Always good to hear from people like you
                 </p>
-                <p className="text-center tracking-wide text-sm mt-1">
+                <p  className="text-center tracking-wide text-sm mt-1">
                 I am Looking forward to read from u !
                 </p>
-              <div className="mt-3 flex scale-90 flex-col md:flex-row justify-center item-center">       
+              <div  className="mt-3 flex scale-90 flex-col md:flex-row justify-center item-center">       
                 <img className="scale-90 mx-auto w-3/12" src="./svg/contactico.svg"></img>
                 <div className="mx-auto w-full mt-10">
                   <ContactForm />

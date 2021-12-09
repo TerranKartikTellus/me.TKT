@@ -1,19 +1,40 @@
-export default function about({data}){
-  console.log(data);
+import React from "react";
+import SmallIconInViewAnimation from "/components/animation/WhenInView/SmallCircularIconAnimation"
 
-  return (
-    <div className="text-gray-100">
-      about
-    </div>
-  );
+export default function about(){
+  return(<div className="lg:max-w-screen-2xl text-gray-100 p-36 border-2 border-gray-100">
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+  <p>about</p>
+<SmallIconInViewAnimation>
+     <div className="text-4xl">about</div>
+  </SmallIconInViewAnimation>
+  </div>)
 }
-
-export async function getServerSideProps(){
-  const res = await fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLZPuM9vAbtXs4QAvoONWzN4wuhvAHazvx&maxResults=10&key=AIzaSyCEJ0HhrD58nKkAknhfY4YT1g-JohZW7ts")
-  const data = await res.json();
-  console.log(data);
-  return {
-    props: {data},
-  }
-}
-

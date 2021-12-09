@@ -1,3 +1,5 @@
+import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
+
 
 export default function Blog({data}){
   const items = data.items;
@@ -15,8 +17,12 @@ export default function Blog({data}){
   return(
      <div className="block p-3 pt-5  bg-gray-200">
               <div className="flex flex-row p-5 justify-between">
-                        <h1 className="tracking-wide  font-OpenSans font-bold text-2xl sm:text-2xl md:text-2xl">Recommendations</h1>
-                        <a href="/Recommendations"><img className="w-8 h-8 scale-95 opacity-95 hover:scale-100 hover:opacity-100 transition duration-150" src="./svg/share_move_black.svg"></img></a>
+                        <AnimateWhenInView duration={0.4} delay={0}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={-60} Iy={0} Fy={0} Fx={0} >    
+                            <h1 className="tracking-wide  font-OpenSans font-bold text-2xl sm:text-2xl md:text-2xl">Recommendations</h1>
+                        </AnimateWhenInView>
+                        <AnimateWhenInView delay={0.4} duration={0}>
+                            <a href="/Recommendations"><img className="w-8 h-8 scale-95 opacity-95 hover:scale-100 hover:opacity-100 transition duration-150" src="./svg/share_move_black.svg"></img></a>
+                        </AnimateWhenInView>
               </div>
              <div className="flex flex-col ">
                    <div className="flex overflow-x-scroll  hide-scroll-bar " >
@@ -24,8 +30,9 @@ export default function Blog({data}){
                 { 
                   items.map(e=>(
 
-
-                       <div key={e.id} className="block p-4 scale-95 hover:scale-100 transition duration-200 bg-opacity-95 hover:bg-opacity-100">
+                      <div key={e.id} className="block p-4 scale-95 hover:scale-100 transition duration-200 bg-opacity-95 hover:bg-opacity-100">
+                         <AnimateWhenInView duration={0.3} delay={0.1}  Iopacity={0} Fopacity={1} Is={0.7} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
+                       
                          <div
                            className="w-80  max-w-xs overflow-hidden ">
 
@@ -60,7 +67,9 @@ export default function Blog({data}){
                              </a>
                             </div>
                            </div>
-                       </div>      
+                        </AnimateWhenInView>
+                       </div>   
+                        
                 ))}
 
                 
