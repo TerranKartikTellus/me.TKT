@@ -40,7 +40,7 @@ export default function Blog({data}){
                             
                             <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
                                <a target="_blank"  className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
-                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl shadow-md hover:shadow-xl  p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
+                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl shadow-md shadow-pink-500/30  p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
 
                                <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.high.url}></img>
 
