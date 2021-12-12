@@ -47,7 +47,7 @@ export default function  YoutubeCards({YTdata}){
                         </div>
                         </a>
 
-                        <a className="w-1/2 rounded-b-xl" target="_blank" rel="noreferrer" href={"https://www.youtube.com/watch?v="+item.snippet.playlistId}>       
+                        <a className="w-1/2 rounded-b-xl" target="_blank" rel="noreferrer" href={"https://www.youtube.com/playlist?list="+item.snippet.playlistId}>       
                         <div className=" flex flex-row bottom-0 justify-center rounded-br-xl items-center hover:bg-slate-200 text-slate-100 hover:text-red-500 hover:font-semibold hover:text-xl border-l-2 border-gray-400 hover:border-black transition duration-200 ease-in bg-black">
                               <p className="font-medium text-lg    truncate  tracking-wider text-center">Playlist</p>
                               <div className="fill-current  ml-2">
