@@ -31,7 +31,7 @@ export default function blogPage({YTdata}){
 const [state, setstate] = useState("youtube");
 
           return(
-                    <div className="bg-gradient-to-b from-gray-900  max-w-screen  md:mx-auto lg:w-8/12 md:w-10/12">
+                    <div className="relative z-0 bg-black  max-w-screen  md:mx-auto lg:w-8/12 md:w-10/12">
                      
                      <Head>
                             <title>Terran Kartik Tellus | Recommendations</title>
@@ -45,16 +45,16 @@ const [state, setstate] = useState("youtube");
                         <div className="w-screen flex  flex-col ">
                               <div className="w-screen  flex overflow-x-scroll hide-scroll-bar ">
                                   <div className="w-screen flex justify-start pt-6 pb-14  flex-nowrap  px-32 sm:px-48 md:px-60 lg:px-96">
-                                      <AnimateWhenInView duration={0.3} delay={0.2}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >   
+                                      <AnimateWhenInView duration={0.3} delay={0.2}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={60} Iy={0} Fy={0} Fx={0} >   
                                        <div onClick={()=>(setstate("youtube"))} className="hover:scale-105 transition duration-150 ease-in-out cursor-pointer hover: block ">
-                                           <div  className="py-1 px-1 max-w-xs overflow-hidden rounded-lg shadow-lg shadow-red-500/100 hover:shadow-red-500/100 bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                                           <div  className="py-1 px-1 max-w-xs overflow-hidden rounded-lg shadow-lg shadow-red-500/100 hover:shadow-red-500/100 bg-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
                                                 <YoutubeIco />
                                            </div>
                                        </div>
                                       </AnimateWhenInView>
-                                      <AnimateWhenInView duration={0.3} delay={0.3}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >   
+                                      <AnimateWhenInView duration={0.3} delay={0.3}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={60} Iy={0} Fy={0} Fx={0} >   
                                        <div onClick={()=>(setstate("other"))} className="hover:scale-105  cursor-pointer hover: block ml-20 mr-10 shadow-lg shadow-blue-500/100 hover:shadow-blue-500/100  hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-                                           <div onClick={()=>(setstate("other"))} className="py-1 px-1 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                                           <div onClick={()=>(setstate("other"))} className="py-1 px-1 max-w-xs overflow-hidden rounded-lg shadow-md bg-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
                                                 <OtherIco />
                                            </div>
                                        </div>   
@@ -66,15 +66,15 @@ const [state, setstate] = useState("youtube");
 
                     
                     </div>
-                    <div className="bg-black  ">
-                        {
-                          state=="youtube" && <YoutubeCards YTdata={YTdata}  className="" />
-                          
-
-                        }{  
-                          state=="other" && <OtherCards />
-                         
-                        }
+                    <div className=" bg-black  ">
+                       
+                         <div className="relative z-50"> 
+                                {
+                                  state=="youtube" && <YoutubeCards  YTdata={YTdata}  className="" />
+                                }{  
+                                  state=="other" && <OtherCards />                                
+                                }
+                         </div>
                         </div>
                     </div>
           );

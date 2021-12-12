@@ -4,13 +4,40 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      keyframes: {
+                wiggle: {
+                    '0%': {
+                        transform: "scale(0.9)",
+                        opacity: "1"
+                    },
+                    '25%': {
+                        transform: 'scale(1) ',
+                        opacity: "0.9"
+                    },
+                    '50%': {
+                        transform: 'scale(0.9) ',
+                        opacity: "1"
+                    },
+                    '75%': {
+                        transform: 'scale(1) ',
+                        opacity: "0.9"
+                    },
+                    '100%': {
+                        transform: 'scale(0.9)',
+                        opacity: "1"
+                    },
+                }
+            },
+            animation: {
+                wiggle: 'wiggle 5s ease-in  infinite',
+            },
+
+
       fontSize: ['hover', 'focus'],
       fontFamily: {
         OpenSans : ['Open Sans', "sans-serif"],
       },
-      animation: {
-         'spin-slow': 'spin 3s linear infinite',
-        },
+      
     },
   },
   variants: {

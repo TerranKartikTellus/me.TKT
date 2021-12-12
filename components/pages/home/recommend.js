@@ -15,23 +15,24 @@ export default function Blog({data}){
   }
 
   return(
-     <div className="block p-3 pt-5  bg-gray-200">
+     <div className="block   bg-gray-200  p-3 pt-5 md:p-11 ">
               <div className="flex flex-row p-5 justify-between">
                         <AnimateWhenInView duration={0.4} delay={0}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={-60} Iy={0} Fy={0} Fx={0} >    
-                            <h1 className="tracking-wide  font-OpenSans font-bold text-2xl sm:text-2xl md:text-2xl">Recommendations</h1>
+                            <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Recommendations</h1>
+                            
                         </AnimateWhenInView>
                         <AnimateWhenInView delay={0.4} duration={0}>
-                            <a href="/Recommendations"><img className="w-8 h-8 scale-95 opacity-95 hover:scale-100 hover:opacity-100 transition duration-150" src="./svg/share_move_black.svg"></img></a>
+                            <a href="/Recommendations" className="sm:grid sm:grid-cols-2 sm:grid-rows-1 text-lg sm:gap-2"> <p className="hidden sm:block">More</p> <img className="w-8 h-8  opacity-95 hover:scale-95 hover:opacity-100 transition-shadow transition-transform duration-150" src="./svg/share_move_black.svg"></img>  </a>
                         </AnimateWhenInView>
               </div>
-             <div className="flex flex-col ">
+             <div className="flex flex-col  p-3 pt-3 md:p-3 ">
                    <div className="flex overflow-x-scroll  hide-scroll-bar " >
                      <div className="flex flex-nowrap  "    >
                 { 
                   items.map(e=>(
 
-                      <div key={e.id} className="block p-4 scale-95 hover:scale-100 transition duration-200 bg-opacity-95 hover:bg-opacity-100">
-                         <AnimateWhenInView duration={0.3} delay={0.1}  Iopacity={0} Fopacity={1} Is={0.7} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
+                      <div key={e.id} className="block p-4 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
+                         <AnimateWhenInView duration={0.2} delay={0}  Iopacity={0} Fopacity={1} Is={0.8} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
                        
                          <div
                            className="w-80  max-w-xs overflow-hidden ">
@@ -40,9 +41,9 @@ export default function Blog({data}){
                             
                             <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
                                <a target="_blank"  className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
-                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl shadow-md shadow-pink-500/30  p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
+                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-gray-400/90 hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
 
-                               <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.high.url}></img>
+                               <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.medium.url}></img>
 
                                <div className="h-56  py-7 px-10  bg-gray-900 rounded-bl-3xl  flex flex-col justify-between leading-normal">
                                 <div className="mb-8 ">

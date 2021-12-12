@@ -23,11 +23,11 @@ export default function  YoutubeCards({YTdata}){
             <AnimateWhenInView duration={0.4} delay={0.7}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={0} Iy={10} Fy={0} Fx={0} >   
               <div className="text-slate-100 text-lg font-medium tracking-wider text-center mt-5 mb-8">A Humbling and Character-Building experience </div>
             </AnimateWhenInView>
-      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-red">
+      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
       {   
           items.map(item=>(
-            <div key={item.id} className="shadow-lg shadow-gray-500/50 hover:shadow-gray-500/100  hover:shadow-2xl transition-shadow duration-300 ease-in-out hover:scale-105 transition duration-200  ease-in-out w-72 md:mx-2 my-4 mx-auto  bg-opacity-40 bg-gradient-to-tr ring-2 ring-transparent hover:ring-gray-100  rounded-xl ">
-                 <AnimateWhenInView className="flex flex-col" duration={0.4} delay={0.1}  Iopacity={0} Fopacity={1} Is={0.7} Fs={1} Ix={50} Iy={10} Fy={0} Fx={0} >   
+            <div key={item.id} className=" shadow-lg shadow-gray-500/50 hover:shadow-gray-500/100  hover:shadow-2xl  hover:scale-95 transition duration-200  ease-in-out w-72 md:mx-2 my-4 mx-auto  bg-black ring-2 ring-transparent hover:ring-gray-100  rounded-xl ">
+                 <AnimateWhenInView className="flex flex-col" duration={0.4} delay={0.1}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={50} Iy={10} Fy={0} Fx={0} >   
                   <div className="w-72 "><img className="object-cover  h-40 w-full  items-center rounded-t-xl sm:rounded-l-xl" src={item.snippet.thumbnails.high.url}></img></div>
                   <div className="w-72 rounded-b-xl  bg-black text-slate-50 shadow-lg ">
                         <div className="mt-3 px-4"><p className="font-semibold text-lg  line-clamp-2">{item.snippet.title}</p> </div>

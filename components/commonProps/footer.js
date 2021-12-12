@@ -17,7 +17,7 @@ export default function footer(){
                               <a href="docs"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110">Docs    </div></a>                    
                     </div>
                     
-                    <div className="block md:hidden  "><img className="h-7 w-7" src="/svg/myLogo.svg" ></img></div>
+                    <div className="block md:hidden  "><Link href="/"><img className="h-7 w-7" src="/svg/myLogo.svg" ></img></Link></div>
                     <div className="text-white  font-semibold ">© {getYear()} <span className="underline">TerranKartikTellus</span>, Inc.</div>
                     
                     <div className="text-gray-300 flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold">
