@@ -3,20 +3,11 @@ import '../styles/scrollbar.css'
 
 import NavBar from "/components/commonProps/navbar"
 import Footer from "/components/commonProps/footer";
-import { Router } from 'next/router';
+
 import { SessionProvider } from "next-auth/react"
-import React, { useCallback , useEffect} from 'react'
+import React from 'react'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-   const resetWindowScrollPosition = useCallback(() => window.scrollTo(0, 0), []);
-
-   useEffect(() => {
-    Router.events.on("routeChangeComplete", resetWindowScrollPosition);
-
-    return () => {
-      Router.events.off("routeChangeComplete", resetWindowScrollPosition);
-    };
-  }, []);
 
   return (
   <SessionProvider session={session}>

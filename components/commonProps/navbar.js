@@ -16,22 +16,28 @@ const sideIconCss = "hover:cursor-pointer h-6 w-6 md:h-7 md:w-7";
         <div className=" items-start tracking-wider text-slate-400 font-semibold ">
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.2} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
            <Link passHref  href="/">
-             <div className={ router.asPath == '/' ? textWhite : textNormal}>HOME</div>
+             <a><div className={ router.asPath == '/' ? textWhite : textNormal}>HOME</div></a>
            </Link> 
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.25} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/about"><div className={ router.asPath == '/about' ? textWhite : textNormal}>ABOUT</div></Link>   
+           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/about">
+             <a><div className={ router.asPath == '/about' ? textWhite : textNormal}>ABOUT</div></a>
+           </Link>   
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.3} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/portfolio"><div className={ router.asPath == '/work' ? textWhite : textNormal}>Portfolio</div></Link> 
+           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/portfolio">
+             <a><div className={ router.asPath == '/work' ? textWhite : textNormal}>Portfolio</div></a>
+           </Link> 
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.35} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
             <Link passHref  href="/Recommendations" scroll={true}>
-              <div className={ router.asPath == '/Recommendations' ? textWhite : textNormal}>RECOMMENDATIONS</div>
+              <a><div className={ router.asPath == '/Recommendations' ? textWhite : textNormal}>RECOMMENDATIONS</div></a>
             </Link> 
           </SlideHr>
           <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.4} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/contact"><div className={ router.asPath == '/contact' ? textWhite : textNormal }>GET IN TOUCH</div></Link>     
+           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/contact">
+             <a><div className={ router.asPath == '/contact' ? textWhite : textNormal }>GET IN TOUCH</div></a>
+           </Link>     
           </SlideHr>
         
         </div>
