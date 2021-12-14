@@ -23,7 +23,7 @@ export default function  YoutubeCards({YTdata}){
             <AnimateWhenInView duration={0.4} delay={0.7}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={0} Iy={10} Fy={0} Fx={0} >   
               <div className="text-slate-100 text-lg font-medium tracking-wider text-center mt-5 mb-8">A Humbling and Character-Building experience </div>
             </AnimateWhenInView>
-      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 scroll-smooth ">
       {   
           items.map(item=>(
             <div key={item.id} className=" shadow-lg shadow-gray-500/50 hover:shadow-gray-500/100  hover:shadow-2xl  hover:scale-95 transition duration-200  ease-in-out w-72 md:mx-2 my-4 mx-auto  bg-black ring-2 ring-transparent hover:ring-gray-100  rounded-xl ">

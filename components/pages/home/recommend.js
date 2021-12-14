@@ -27,11 +27,11 @@ export default function Blog({data}){
               </div>
              <div className="flex flex-col  p-3 pt-3 md:p-3 ">
                    <div className="flex overflow-x-scroll  hide-scroll-bar " >
-                     <div className="flex flex-nowrap  "    >
+                     <div className="flex flex-nowrap  scroll-smooth snap-x snap-always"    >
                 { 
                   items.map(e=>(
 
-                      <div key={e.id} className="block p-4 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
+                      <div key={e.id} className="snap-center hover:contrast-125 grayscale hover:grayscale-0 block p-4 scale-95 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
                          <AnimateWhenInView duration={0.2} delay={0}  Iopacity={0} Fopacity={1} Is={0.8} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
                        
                          <div
@@ -41,7 +41,7 @@ export default function Blog({data}){
                             
                             <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
                                <a target="_blank"  className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
-                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-gray-400/90 hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
+                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl hover:drop-shadow-md shadow-lg shadow-gray-400/90 hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
 
                                <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.medium.url}></img>
 

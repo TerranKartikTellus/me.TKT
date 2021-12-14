@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
   <SessionProvider session={session}>
   
-   <div className="m-0 antialiased font-OpenSans bg-neutral-900 h-screen overflow-x-hidden">  
+   <div className="scroll-smooth m-0 antialiased font-OpenSans bg-neutral-900 h-screen overflow-x-hidden">  
        <NavBar />
          <Component {...pageProps} />
       <Footer />
