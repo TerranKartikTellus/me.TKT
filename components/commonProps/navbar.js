@@ -2,7 +2,9 @@ import { useRouter } from 'next/router'
 import Link from "next/link"
 import Head from "next/head"
 
+import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
 
+                        
 const List = [
 {"id":0,"name":"Home" ,           "url":"/"},
 {"id":1,"name":"about" ,          "url":"/about"},
@@ -43,8 +45,9 @@ return (
         {
           List.map((item)=>(
             <div key={item.key} className={ item.url === path ? classOnActive : classOnInactive+" "} >
+            <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={-60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
             <Link  href={item.url}><a>{item.name}</a></Link>
-            
+            </AnimateWhenInView>
             </div>
           ))  
         }      
@@ -60,22 +63,38 @@ function Right({path}){
     <div className="flex flex-col  justify-around  items-center ">
         <div className={path == "/about" ? "hidden" :  "block" }>
         <Link href="https://github.com/TerranKartikTellus/"><a>
+         <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
           <div>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/github.svg"} />  
-          </div></a>
+          </div>
+             </AnimateWhenInView>
+          </a>
         </Link>
-    
+        
+        
         <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
+          <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+        
           <div >
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/instagram.svg"} />
-          </div></a>
+          </div>
+             </AnimateWhenInView>
+          </a>
         </Link>
-       
-        <Link href="mailto:terrankartiktellus@gmail.com"><a>
+     
+      
+       <Link href="mailto:terrankartiktellus@gmail.com"><a>
+         <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+        
           <div>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/google.svg"} />
-          </div></a>
+          </div>
+             </AnimateWhenInView>
+          </a>
+
         </Link>
+       
+
         </div>
 {/* 
 ------------------------- */}
