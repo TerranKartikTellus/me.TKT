@@ -9,7 +9,7 @@ export default function BottomLayer(){
 
 
   return(
-      <div className="mt-36 space-x-2 md:mt-44 flex flex-row h-20 w-11/12  text-slate-200 justify-center">
+      <div className="mt-36 space-x-2 tracking-wide hover: transition-transform ease-in-out duration-150  font-OpenSans md:mt-44 flex flex-row h-20 w-11/12  text-slate-200 justify-center">
         
         <div className="block md:hidden text-white  w-80">
           <div className="text-white text-base  text-center h-10 my-4">
@@ -24,24 +24,24 @@ export default function BottomLayer(){
           </div>
         </div>
         
-        <div className="opacity-95 hover:opacity-100 scale-100 hover:scale-110 transition duration-150 hidden md:block border-r-2 border-gray-400  md:mr-0 mr-4 pr-10 sm:pr-10 grid grid-rows-3 gap-0 text-right w-1/3 ">
+        <div className="opacity-95 hover:opacity-100 scale-100  transition duration-150 hidden md:block border-r-2 border-gray-400  md:mr-0 mr-4 pr-10 sm:pr-10 grid grid-rows-3 gap-0 text-right w-1/3 ">
               <div className=" col-span-2 flex flex-row"><img className="ml-auto h-6 w-7" src="./svg/man.svg" /></div>
               
-              <div className=" col-span-2 text-xs font-normal ">Creative entrepreneur</div>
+              <div className=" col-span-2  font-normal mt-10">Creative entrepreneur</div>
             </div>
 
-        <div className="opacity-95 hover:opacity-100 scale-100 hover:scale-110 transition duration-150 border-r-2 border-gray-400 hidden md:block  sm:px-10">
-            <div className=" grid grid-rows-3 gap-x-9 gap text-center">
+        <div className="opacity-95 hover:opacity-100 scale-100  transition duration-150 border-r-2 border-gray-400 hidden md:block  sm:px-10">
+            <div className=" grid grid-rows-3 gap-x-2  gap text-center">
               <div className=" col-span-2 "><img className="mx-auto h-6 w-7" src="./svg/location.svg" /></div>
-              <div className=" col-span-2 mt-1 text-sm font-semibold text-clip">South-Asia</div>
-              <div className=" col-span-2 text-xs font-normal ">Mumbai : Hong Kong</div>
+              <div className=" col-span-2  font-semibold  ">South-Asia <br/>Mumbai : Hong Kong</div>
+              <div className=" col-span-2 font-normal "></div>
             </div>
         </div>
 
-        <div className="opacity-95 hover:opacity-100 scale-100 hover:scale-110 transition duration-150 hidden md:block w-1/3  grid grid-rows-3 gap-0 text-left  sm:pl-10">
+        <div className="opacity-95 hover:opacity-100 scale-100  transition duration-150 hidden md:block w-1/3  grid grid-rows-3 gap-0 text-left  sm:pl-10">
               <div className=" col-span-2 flex flex-row"><img className="mr-auto h-6 w-7" src="./svg/email.svg" /></div>
 
-              <div className=" col-span-2 text-xs font-normal ">TerranKartikTellus<br/>@gmail.com</div>
+              <div className=" col-span-2 font-normal mt-10">TerranKartikTellus<br/>@gmail.com</div>
         </div>
 
       </div>

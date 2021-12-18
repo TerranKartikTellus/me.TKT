@@ -31,7 +31,7 @@ export default function Blog({data}){
                 { 
                   items.map(e=>(
 
-                      <div key={e.id} className="snap-center hover:contrast-125 grayscale hover:grayscale-0 block p-4 scale-95 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
+                      <div key={e.id} className="snap-center hover:contrast-125  block p-4 scale-95 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
                          <AnimateWhenInView duration={0.2} delay={0}  Iopacity={0} Fopacity={1} Is={0.8} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
                        
                          <div

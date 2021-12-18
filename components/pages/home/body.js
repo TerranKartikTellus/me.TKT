@@ -35,7 +35,7 @@ export default function Body({data}){
       
       </div>
       
-      <div className="mb-4 pb-4 flex-grow">
+      <div className="mb-4 pb-4 flex-grow ">
       <Scale initialScale={1.2} animateScale={0.9} exitScale={0.8} animateDelay={0.7} animateDuration={1} >
       <SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.7} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}>
         <BottomLayer />

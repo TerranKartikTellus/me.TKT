@@ -11,9 +11,9 @@ export default function Work(){
     </Head>
               <div className="flex flex-row justify-between">
                         <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Portfolio</h1>
-                                               
+                                           
                         <img className="scale-95 opacity-95 hover:scale-100 hover:opacity-100 hover:shadow-xl transition duration-200 w-8 h-8" src="./svg/share_move_white.svg"></img>
-                        
+                       
               </div>
               <div className="justify-center items-center flex flex-col mb-14">
                        

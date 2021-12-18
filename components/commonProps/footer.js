@@ -1,33 +1,52 @@
 import Link from "next/link"
+import { useRouter } from 'next/router'
 
-export default function footer(){
-           
+
+export default function Footer(){
+const router = useRouter()
+const path = router.asPath ;      
           return(
-          <div className="bottom-0 relative border-t-2 border-gray-300 pt-5 my-10 flex md:flex-row md:justify-evenly  flex-col space-y-2 justify-center items-center  w-screen text-xs md:text-sm">
-               
-                    <div className="text-gray-300 flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold">
-                              <a href="terms"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110 ">Terms   </div></a>                    
+          <div className="">
+                              
+        
+          <div className=" bottom-0 z-0    my-10 flex md:flex-row md:justify-evenly  flex-col space-y-2 justify-center items-center  w-screen text-xs md:text-sm">
+                    <div className="hidden md:block">
+                    <div className={path==="/about" ? "  text-neutral-900"+" flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold" 
+                    : "  text-gray-300 flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold"}>
+                              <a href="terms"><div className="hover:rounded   hover:scale-110 ">Terms   </div></a>                    
                                         <div className="w-px h-5 mx-2 bg-slate-200"></div>
-                              <a href="privacy"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110 ">Privacy </div></a>                    
+                              <a href="privacy"><div className="hover:rounded  hover:scale-110 ">Privacy </div></a>                    
                                         <div className="w-px h-5 mx-2 bg-slate-200"></div>
-                              <a href="security"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110 ">Security</div></a>                              
-                                        <div className="w-px h-5 mx-2 bg-slate-200"></div>
-                              <a href="status"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110 ">Status  </div></a>                       
-                                        <div className="w-px h-5 mx-2 bg-slate-200"></div>
-                              <a href="docs"><div className="hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110">Docs    </div></a>                    
+                             
+                              <a href="docs"><div className="hover:rounded   hover:scale-110">Docs    </div></a>                    
+                    </div>
                     </div>
                     
-                    <div className="block md:hidden  "><Link href="/"><img className="h-7 w-7" src="/svg/myLogo.svg" ></img></Link></div>
-                    <div className="text-white  font-semibold ">© {getYear()} <span className="underline">TerranKartikTellus</span>, Inc.</div>
                     
-                    <div className="text-gray-300 flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold">
-                              <a href="/contact"><div className=" hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110">Contact Me       </div> </a>
+                    <div className={path==="/about"? "text-neutral-900"+"  font-semibold tracking-wider text-base scale-95 select-none text-center"
+                    : "text-white  font-semibold tracking-wider text-base scale-95 select-none text-center"}>
+                              <div className="flex flex-row">
+                              <div className="text-lg">T</div>
+                              <div className="relative flex flex-row">
+                                        
+                                        <div className="block mx-auto invert"><Link href="/"><img className="h-7 w-7" src="/svg/myLogo.svg" ></img></Link></div>
+                              </div>
+                              <div className="text-lg">T</div>
+                              </div>
+                              <div className="text-sm opacity-75 ">{getYear()}</div>
+                                </div>
+                    
+                    <div className={path === "/about" ? "text-neutral-900"+" flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold"
+                              : "text-gray-300 flex flex-row space-x-2 justify-center items-center md:space-x-5 font-OpenSans font-semibold"}>
+                              <a href="/contact"><div className=" hover:rounded   hover:scale-110">Contact       </div> </a>
                               <div className="w-px h-5 mx-2 bg-slate-200"></div>
-                              <a href="/blog"><div className=" hover:rounded hover:bg-gray-100 hover:text-black hover:scale-110">Blog             </div> </a>
+                              <a href="/blog"><div className=" hover:rounded   hover:scale-110">Blog             </div> </a>
                               
-                              <a href="/about"><div className=" rounded bg-gray-100 text-black p-2 hover:bg-gray-800 hover:text-gray-200">About</div> </a>             
+                              <a href="/about"><div className={ path === "/about" ? "bg-neutral-900"+" rounded hover:ring-2 hover:ring-black text-neutral-100 p-3 shadow-xl hover:bg-gray-100 hover:text-gray-900"
+                                        :" rounded bg-gray-100 text-black p-3 shadow-xl shadow-neutral-100/20 hover:bg-gray-800 hover:text-gray-200 hover:ring-2 hover:ring-white "}>About</div> </a>             
                     </div>
           </div>
+            </div>
           );
 }
 

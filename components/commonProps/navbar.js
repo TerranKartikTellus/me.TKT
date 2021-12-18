@@ -1,49 +1,104 @@
-import Link from 'next/link'
-import {urlInstagram , urlGoogle , urlGithub} from "/config/config"
 import { useRouter } from 'next/router'
+import Link from "next/link"
+import Head from "next/head"
 
-import SlideHr from "/components/animation/slideHorizontally";
 
-export default function NavBar(){
-const router = useRouter();
-console.log(router.asPath);
-const textWhite =  "scale-105 hover:scale-110 opacity-95 hover:opacity-100 hover:cursor-pointer hover:text-white text-white transition duration-200 text-sm font-bold";
-const textNormal = "hover:scale-105 opacity-95 hover:opacity-100  hover:cursor-pointer hover:text-white            transition duration-200 text-xs md:text-sm";
+const List = [
+{"id":0,"name":"Home" ,           "url":"/"},
+{"id":1,"name":"about" ,          "url":"/about"},
+{"id":2,"name":"portfolio" ,      "url":"/portfolio"},
+{"id":3,"name":"recommendations" ,"url":"/Recommendations"},
+{"id":4,"name":"get in touch" ,   "url":"/contact"},
+]
 
-const sideIconCss = "hover:cursor-pointer h-6 w-6 md:h-7 md:w-7";
+const ListUrl = ["/","/about","/portfolio","/Recommendations","/contact"]
 
-  return(
-    <div className={router.asPath === '/about' ? " z-50  sticky top-0  px-12 py-8  font-OpenSans flex  flex-row justify-between  text-white bg-gradient-to-b from-black via-transparent to-transparent md:bg-opacity-0 md:bg-transparent "
-                                              : " z-50  sticky top-0  px-12 py-8  font-OpenSans flex  flex-row justify-between  text-neutral-100 bg-gradient-to-b from-gray-900 to-transparent md:bg-opacity-0 md:bg-transparent " }>
-        <div className=" items-start tracking-wider text-slate-400 font-semibold ">
-          <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.2} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref  href="/">
-             <a><div className={ router.asPath == '/' ? textWhite : textNormal}>HOME</div></a>
-           </Link> 
-          </SlideHr>
-          <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.25} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/about">
-             <a><div className={ router.asPath == '/about' ? textWhite : textNormal}>ABOUT</div></a>
-           </Link>   
-          </SlideHr>
-          <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.3} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/portfolio">
-             <a><div className={ router.asPath == '/work' ? textWhite : textNormal}>Portfolio</div></a>
-           </Link> 
-          </SlideHr>
-          <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.35} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-            <Link passHref  href="/Recommendations" scroll={true}>
-              <a><div className={ router.asPath == '/Recommendations' ? textWhite : textNormal}>RECOMMENDATIONS</div></a>
-            </Link> 
-          </SlideHr>
-          <SlideHr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.4} animateDuration={0.5} initialLocation={-30} animateLocation={0} exitLocation={0}>
-           <Link passHref onClick={()=>{window.scrollTo(0, 0)}} href="/contact">
-             <a><div className={ router.asPath == '/contact' ? textWhite : textNormal }>GET IN TOUCH</div></a>
-           </Link>     
-          </SlideHr>
-        
+export default function Navbar(){
+const router = useRouter()
+const path = router.asPath ;
+
+
+const nonAstheticClass = " font-extrabold font-OpenSans py-8 sticky top-0 z-0 flex flex-row justify-between px-4 lg:px-20 ";
+  return (
+    <div className={path == "/about" 
+    ? " text-gray-900 bg-gradient-to-b from-slate-50 to-transparent "+nonAstheticClass 
+    : " text-gray-200 bg-gradient-to-b from-slate-900 to-transparent "+nonAstheticClass }>
+       
+      <div><Left  path={path}></Left></div>
+      <div><Right path={path}></Right></div>
+     
+    </div>
+  );
+}
+function Left({path}){
+  
+const classOnActive = path=="/about"? " font-mono font-black text-black "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95 rotate-0 hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out opacity-100 uppercase text-opacity-100 text-base md:text-lg  tracking-widest transition-opacity delay-75 duration-300 ease-in-out "
+                                    : " font-mono font-black text-white "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95 rotate-0 hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out opacity-100 uppercase text-opacity-100 text-base md:text-lg  tracking-widest transition-opacity delay-75 duration-300 ease-in-out ";
+const classOnInactive = path=="/about"? " text-black "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95  hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out hover:opacity-100 opacity-50  uppercase text-opacity-90 text-base md:text-sm tracking-wide md:tracking-wide transition-opacity delay-75 duration-300 ease-in-out "
+                                      : " text-white "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95  hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out hover:opacity-100 opacity-50  uppercase text-opacity-90 text-base md:text-sm tracking-wide md:tracking-wide transition-opacity delay-75 duration-300 ease-in-out ";
+
+return (
+    <div>
+      <ul>
+        {
+          List.map((item)=>(
+            <div className={ item.url === path ? classOnActive : classOnInactive+" "} key={item.key}>
+            <Link  href={item.url}><a>{item.name}</a></Link>
+            
+            </div>
+          ))  
+        }      
+      </ul>
+    </div>
+  );
+}
+function Right({path}){
+  const IconShow = "block  w-8 h-8 my-1 text-red-500 fill-current text-white scale-100 transition duration-150 opacity-95 hover:opacity-100 hover:scale-105 "
+  const IconHidden = "hidden  w-8 h-8 my-1 text-red-500  scale-100 transition duration-150 opacity-95 hover:opacity-100 hover:scale-105 "
+  
+  return (
+    <div className="flex flex-col  justify-around  items-center ">
+        <div className={path == "/about" ? "hidden" :  "block" }>
+        <Link href="https://github.com/TerranKartikTellus/"><a>
+          <div>
+            <img className=" mt-1 w-7 h-7  md:w-9 md:h-9" src={"/svg/github.svg"} />  
+          </div></a>
+        </Link>
+    
+        <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
+          <div >
+            <img className=" mt-1 w-7 h-7  md:w-9 md:h-9" src={"/svg/instagram.svg"} />
+          </div></a>
+        </Link>
+       
+        <Link href="mailto:terrankartiktellus@gmail.com"><a>
+          <div>
+            <img className=" mt-1 w-7 h-7  md:w-9 md:h-9" src={"/svg/google.svg"} />
+          </div></a>
+        </Link>
         </div>
-        
+{/* 
+------------------------- */}
+        <div className={path == "/about" ? "block" :  "hidden" }>
+        <Link href="https://github.com/TerranKartikTellus/"><a>
+          <div>
+            <img className="invert rounded-full mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/github.svg"} />  
+          </div></a>
+        </Link>
+    
+        <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
+          <div >
+            <img className="invert  mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/instagram.svg"} />
+          </div></a>
+        </Link>
+       
+        <Link href="mailto:terrankartiktellus@gmail.com"><a>
+          <div>
+            <img className="invert rounded-full mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/google.svg"} />
+          </div></a>
+        </Link>
+        </div>
+    
     </div>
   );
 }

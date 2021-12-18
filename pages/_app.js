@@ -6,17 +6,22 @@ import Footer from "/components/commonProps/footer";
 
 import { SessionProvider } from "next-auth/react"
 import React from 'react'
-
 import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-const router = useRouter();
-const ClassNameMain = "relative scroll-smooth m-0 antialiased font-OpenSans  h-screen overflow-x-hidden";
+  
+
+const router = useRouter()
+const path = router.asPath ;
+
+
   return (
   <SessionProvider session={session}>
-  
-   <div className={ router.asPath === '/about' ? "bg-neutral-900"+ClassNameMain : "bg-neutral-900"+ClassNameMain}>  
-       <NavBar className="absolute top-0 left-0"/>
+   
+   <div className={path == "/about" ? "scroll-smooth m-0 antialiased font-OpenSans bg-neutral-100 h-screen overflow-x-hidden "
+                      : "scroll-smooth m-0 antialiased font-OpenSans bg-neutral-900 h-screen overflow-x-hidden "
+                      }>  
+       <NavBar />
          <Component {...pageProps} />
       <Footer />
    </div>
@@ -24,6 +29,9 @@ const ClassNameMain = "relative scroll-smooth m-0 antialiased font-OpenSans  h-s
   </SessionProvider>
   );
 }
+
+
+
 
 export default MyApp
 
