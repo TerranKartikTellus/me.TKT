@@ -42,7 +42,7 @@ return (
       <ul>
         {
           List.map((item)=>(
-            <div className={ item.url === path ? classOnActive : classOnInactive+" "} key={item.key}>
+            <div key={item.key} className={ item.url === path ? classOnActive : classOnInactive+" "} >
             <Link  href={item.url}><a>{item.name}</a></Link>
             
             </div>
