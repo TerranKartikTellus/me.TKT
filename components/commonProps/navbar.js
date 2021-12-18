@@ -63,7 +63,7 @@ function Right({path}){
     <div className="flex flex-col  justify-around  items-center ">
         <div className={path == "/about" ? "hidden" :  "block" }>
         <Link href="https://github.com/TerranKartikTellus/"><a>
-         <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+         <AnimateWhenInView duration={0.4} delay={0.3}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
           <div>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/github.svg"} />  
           </div>
@@ -73,7 +73,7 @@ function Right({path}){
         
         
         <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
-          <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+          <AnimateWhenInView duration={0.4} delay={0.4}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
         
           <div >
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/instagram.svg"} />
@@ -84,7 +84,7 @@ function Right({path}){
      
       
        <Link href="mailto:terrankartiktellus@gmail.com"><a>
-         <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+         <AnimateWhenInView duration={0.4} delay={0.5}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
         
           <div>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/google.svg"} />
