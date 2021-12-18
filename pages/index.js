@@ -32,7 +32,7 @@ export default function Home({data}) {
   )
 }
 
-export async function getServerSideProps(context) {  
+export async function getStaticProps(context) {  
   const res = await fetch(url);
   const data = await res.json();
 
