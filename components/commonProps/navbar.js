@@ -61,19 +61,19 @@ function Right({path}){
         <div className={path == "/about" ? "hidden" :  "block" }>
         <Link href="https://github.com/TerranKartikTellus/"><a>
           <div>
-            <img className=" mt-1 w-7 h-7  md:w-9 md:h-9" src={"/svg/github.svg"} />  
+            <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/github.svg"} />  
           </div></a>
         </Link>
     
         <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
           <div >
-            <img className=" mt-1 w-7 h-7  md:w-9 md:h-9" src={"/svg/instagram.svg"} />
+            <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/instagram.svg"} />
           </div></a>
         </Link>
        
         <Link href="mailto:terrankartiktellus@gmail.com"><a>
           <div>
-            <img className=" mt-1 w-7 h-7  md:w-9 md:h-9" src={"/svg/google.svg"} />
+            <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/google.svg"} />
           </div></a>
         </Link>
         </div>
@@ -82,13 +82,13 @@ function Right({path}){
         <div className={path == "/about" ? "block" :  "hidden" }>
         <Link href="https://github.com/TerranKartikTellus/"><a>
           <div>
-            <img className="invert rounded-full mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/github.svg"} />  
+            <img className="invert rounded-full mt-1  w-7 h-7 md:w-8 md:h-8" src={"/svg/github.svg"} />  
           </div></a>
         </Link>
     
         <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
           <div >
-            <img className="invert  mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/instagram.svg"} />
+            <img className="invert  mt-1  w-7 h-7 md:w-8 md:h-8" src={"/svg/instagram.svg"} />
           </div></a>
         </Link>
        

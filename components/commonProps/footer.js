@@ -29,7 +29,7 @@ const path = router.asPath ;
                               <div className="text-lg">T</div>
                               <div className="relative flex flex-row">
                                         
-                                        <div className="block mx-auto invert"><Link href="/"><img className="h-7 w-7" src="/svg/myLogo.svg" ></img></Link></div>
+                                        <div className={path==="/about"? "block mx-auto invert" : "block mx-auto invert-0" }><Link href="/"><img className="h-7 w-7" src="/svg/myLogo.svg" ></img></Link></div>
                               </div>
                               <div className="text-lg">T</div>
                               </div>
