@@ -4,7 +4,7 @@ import SlideHr from "/components/animation/slideHorizontally";
 
 
 import React from "react";
-/** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
+
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
 
 
@@ -48,22 +48,25 @@ const [state, setstate] = React.useState("");
                   <div className=" flex flex-col mt-2 sm:px-11 md:px-7">  
                     <div>
                       <AnimateWhenInView duration={0.4} delay={0.8}  Iopacity={0} Fopacity={1} Ix={0} Iy={30} Fy={0} Fx={0} >
-                      <p className="font-semibold text-lg tracking-wide sm:text-xl  text-center ">
+                      <div><p className="font-semibold text-lg tracking-wide sm:text-xl  text-center ">
                       Hi, I’m Terran.<br/> Nice to meet you.
                       </p>
+                      </div>
                       </AnimateWhenInView>
                     </div>
                     <br/>
                     
                     <div className="text-sm tracking-wide text-center">
                       <AnimateWhenInView duration={0.4} delay={0.8}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={0} Iy={0} Fy={0} Fx={0} >
-                      <p>
+                      <div>
+                        <p>
                       Since beginning my journey as a freelance developer, 
                       I've done remote work for agencies, consulted for startups, and 
                       created digital products for consumer use.
                       I'm quietly confident, naturally curious, and perpetually working on improving
                       my chops one design problem at a time.
                       </p>
+                      </div>
                       </AnimateWhenInView>
                     </div>
                   

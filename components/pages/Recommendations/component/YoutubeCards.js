@@ -1,4 +1,4 @@
-import SlideVr from "/components/animation/slideVertically";
+
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
 
 

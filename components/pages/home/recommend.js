@@ -1,5 +1,5 @@
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
-
+import Link from "next/link"
 
 export default function Blog({data}){
   const items = data.items;
@@ -19,10 +19,10 @@ export default function Blog({data}){
               <div className="flex flex-row p-5 justify-between">
                         <AnimateWhenInView duration={0.4} delay={0}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={-60} Iy={0} Fy={0} Fx={0} >    
                             <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Recommendations</h1>
-                            
                         </AnimateWhenInView>
                         <AnimateWhenInView delay={0.4} duration={0}>
-                            <a href="/Recommendations" className="sm:grid sm:grid-cols-2 sm:grid-rows-1 text-lg sm:gap-2"> <p className="hidden sm:block">More</p> <img className="w-8 h-8  opacity-95 hover:scale-95 hover:opacity-100 transition-shadow transition-transform duration-150" src="./svg/share_move_black.svg"></img>  </a>
+                            <Link href="/Recommendations"><a  className="sm:grid sm:grid-cols-2 sm:grid-rows-1 text-lg sm:gap-2"> <p className="hidden sm:block">More</p> <img className="w-8 h-8  opacity-95 hover:scale-95 hover:opacity-100 transition-shadow transition-transform duration-150" src="./svg/share_move_black.svg"></img>  </a>
+                            </Link>
                         </AnimateWhenInView>
               </div>
              <div className="flex flex-col  p-3 pt-3 md:p-3 ">
@@ -40,7 +40,7 @@ export default function Blog({data}){
                             
                             
                             <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
-                               <a target="_blank"  className="" href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`}>
+                               <Link href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`} ><a target="_blank"  className="" >
                                <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl hover:drop-shadow-md shadow-lg shadow-gray-400/90 hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
 
                                <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.medium.url}></img>
@@ -66,6 +66,7 @@ export default function Blog({data}){
                               </div>
                               </div>
                              </a>
+                            </Link>
                             </div>
                            </div>
                         </AnimateWhenInView>

@@ -2,10 +2,10 @@ import Scale from "/components/animation/scale";
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
 import {  useState } from "react";
-import {mySite} from "/config/config.js"
+
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useRouter } from "next/router";
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

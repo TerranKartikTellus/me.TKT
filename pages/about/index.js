@@ -75,13 +75,13 @@ const [state, setstate] = React.useState("");
                     
                     <div className="text-sm tracking-wide text-center">
                       <AnimateWhenInView duration={0.4} delay={0.9}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={0} Iy={0} Fy={0} Fx={0} >
-                      <p>
+                      <span>
                       Since beginning my journey as a freelance developer, 
                       I've done remote work for agencies, consulted for startups, and 
                       created digital products for consumer use.
                       I'm quietly confident, naturally curious, and perpetually working on improving
                       my chops one design problem at a time.
-                      </p>
+                      </span>
                       </AnimateWhenInView>
                     </div>
                   

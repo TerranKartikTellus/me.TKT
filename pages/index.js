@@ -3,7 +3,7 @@ import Body from "/components/pages/home/body"
 
 const YOUTUBE_PLAYLIST_ITEMS_ENDPOINT = "https://www.googleapis.com/youtube/v3/playlistItems";
 const playlistId= "PLZPuM9vAbtXs4QAvoONWzN4wuhvAHazvx";
-const url = YOUTUBE_PLAYLIST_ITEMS_ENDPOINT+"?part=snippet&playlistId="+playlistId+"&maxResults=20"+"&key="+process.env.GOOGLE_API_KEY;
+const url = YOUTUBE_PLAYLIST_ITEMS_ENDPOINT+"?part=snippet&playlistId="+playlistId+"&maxResults=5"+"&key="+process.env.GOOGLE_API_KEY;
 
 export default function Home({data}) {
   
