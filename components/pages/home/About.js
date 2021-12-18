@@ -32,10 +32,10 @@ const [state, setstate] = React.useState("");
                   
                   <div className=" flex flex-row justify-between">
                         
-                        <AnimateWhenInView duration={0.4} delay={0.4}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
+                        <AnimateWhenInView duration={0.4} delay={0.8}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
                             <h1 className="tracking-wide font-semibold text-3xl sm:text-3xl md:text-4xl">About</h1>
                         </AnimateWhenInView >
-                        <AnimateWhenInView duration={0.4} delay={0.4}>
+                        <AnimateWhenInView duration={0.4} delay={0.8}>
                             <a href="/about"><img src="./svg/share_move_black.svg" className="hover:scale-105 hover:shadow-xl transition duration-100 w-8 h-8"></img></a>
                         </AnimateWhenInView>
                   </div>
