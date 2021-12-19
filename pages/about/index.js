@@ -2,10 +2,21 @@ import React from "react";
 import Link from "next/link"
 /** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
-
+import Head from "next/head"
 
 export default function about(){
   return(<div className="mt-0 flex flex-row justify-center lg:max-w-screen-2xl text-gray-100 mx-auto md:mx-28 lg:mx-64">
+    <Head>
+        <title>Contact | TKT</title>
+        <link rel="icon" href="/svg/favicon.svg" />
+       
+        <meta charset="utf-8"/>
+        <meta name="Description" CONTENT="Author: Kartik, Illustrator: Kartik, Category: Personal Site , A few words about my professional life. , Length: 5 pages"/>
+        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    </Head>
+
     <About className="" ></About>
   </div>)
 }

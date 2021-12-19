@@ -7,10 +7,24 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Head from "next/head"
 
 export default function Contact(){
   return(
     <div className="">
+      <Head>
+       
+        <title>Contact | Terran Kartik Tellus </title>
+        <meta name="description" content="Always good to hear from you, feel free to get connected any time !" />
+        <link rel="icon" href="/svg/favicon.svg" />
+       
+        <meta charset="utf-8"/>
+        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    
+      </Head>
+
      <div className=" md:p-11 ">
               <div className="scale-110 hidden md:block text-center text-gray-100 ">  
                <h1 className="text-2xl font-semibold">Hi Terran here ! <br/></h1>

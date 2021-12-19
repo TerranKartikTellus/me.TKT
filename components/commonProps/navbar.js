@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from "next/link"
 import Head from "next/head"
-
+import Router from 'next/router'
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
 
                         
@@ -9,7 +9,7 @@ const List = [
 {"id":0,"name":"Home" ,           "url":"/"},
 {"id":1,"name":"about" ,          "url":"/about"},
 {"id":2,"name":"portfolio" ,      "url":"/portfolio"},
-{"id":3,"name":"recommendations" ,"url":"/Recommendations"},
+{"id":3,"name":"Recommendations" ,"url":"/Recommendations"},
 {"id":4,"name":"get in touch" ,   "url":"/contact"},
 ]
 
@@ -34,6 +34,8 @@ const nonAstheticClass = " font-extrabold font-OpenSans py-8 sticky top-0 z-0 fl
 }
 function Left({path}){
   
+
+  
   const classOnActive = path=="/about"? "     -translate-x-2 font-mono font-black text-black "+" uppercase text-lg md:text-xl "
   : "     font-mono font-black text-white "+" -translate-x-2 uppercase text-lg ";
 const classOnInactive = path=="/about"? "     text-black "+" uppercase text-sm text-opacity-70 "
@@ -46,7 +48,7 @@ return (
           List.map((item)=>(
             <div key={item.key} className={ item.url === path ? classOnActive+anma : classOnInactive+anma} >
             <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={-60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
-            <Link  href={item.url}><a>{item.name}</a></Link>
+            <Link  href={item.url}><a >{item.name}</a></Link>
             </AnimateWhenInView>
             </div>
           ))  

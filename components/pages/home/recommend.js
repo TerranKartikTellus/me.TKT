@@ -1,9 +1,10 @@
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Blog({data}){
   const items = data.items;
-  
+
   function formatDate(date) {
    var utc = date.toUTCString() // 'ddd, DD MMM YYYY HH:mm:ss GMT'
    return  utc.slice(17, 22)+" : "+utc.slice(5, 8) +" "+ utc.slice(8, 12) +" "+ utc.slice(12, 16);
@@ -21,7 +22,8 @@ export default function Blog({data}){
                             <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Recommendations</h1>
                         </AnimateWhenInView>
                         <AnimateWhenInView delay={0.4} duration={0}>
-                            <Link href="/Recommendations"><a  className="sm:grid sm:grid-cols-2 sm:grid-rows-1 text-lg sm:gap-2"> <p className="hidden sm:block">More</p> <img className="w-8 h-8  opacity-95 hover:scale-95 hover:opacity-100 transition-shadow transition-transform duration-150" src="./svg/share_move_black.svg"></img>  </a>
+                            <Link scroll href="/Recommendations">
+                              <a  className="sm:grid sm:grid-cols-2 sm:grid-rows-1 text-lg sm:gap-2"> <p className="hidden sm:block">More</p> <img className="w-8 h-8  opacity-95 hover:scale-95 hover:opacity-100 transition-shadow transition-transform duration-150" src="./svg/share_move_black.svg"></img>  </a>
                             </Link>
                         </AnimateWhenInView>
               </div>
@@ -31,7 +33,7 @@ export default function Blog({data}){
                 { 
                   items.map(e=>(
 
-                      <div key={e.id} className="snap-center hover:contrast-125  block p-4 scale-95 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
+                      <div key={e.id} className="snap-center   block p-4 scale-95 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
                          <AnimateWhenInView duration={0.2} delay={0}  Iopacity={0} Fopacity={1} Is={0.8} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
                        
                          <div
@@ -42,9 +44,9 @@ export default function Blog({data}){
                             <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
                                <Link href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`} ><a target="_blank"  className="" >
                                <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl hover:drop-shadow-md shadow-lg shadow-gray-400/90 hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
-
-                               <img className="object-cover h-40 w-full rounded-tr-3xl   shadow-md" src={e.snippet.thumbnails.medium.url}></img>
-
+                                <div className="h-40  rounded-tr-3xl   shadow-md">
+                               <Image width={e.snippet.thumbnails.medium.width} layout="responsive" height={e.snippet.thumbnails.medium.height} priority   alt={e.snippet.title}  quality={100} className="object-cover " src={e.snippet.thumbnails.medium.url}></Image>
+                                </div>
                                <div className="h-56  py-7 px-10  bg-gray-900 rounded-bl-3xl  flex flex-col justify-between leading-normal">
                                 <div className="mb-8 ">
                                   <p className="text-sm text-gray-100 flex items-center">
@@ -57,7 +59,6 @@ export default function Blog({data}){
 
                                 </div>
                                 <div className="flex items-center">
-                                  <img className="w-10 h-10 sm:rounded-none rounded-full mr-4" src={e.snippet.thumbnails.default.url} alt="Avatar of Jonathan Reinink" />
                                   <div className="text-sm">
                                     <p className="text-gray-100 leading-none">{e.snippet.videoOwnerChannelTitle}</p>
                                     <p className="text-gray-50">Last Updated : {formatDate(new Date(e.snippet.publishedAt))}</p>

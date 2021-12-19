@@ -1,4 +1,10 @@
 module.exports = {
+  experimental: {
+    scrollRestoration: false,
+  },
+  images: {
+    domains: ['i.ytimg.com'],
+  },
   reactStrictMode: true,
   async headers() {
     return [

@@ -1,6 +1,6 @@
 
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
-
+import Image from "next/image"
 // process.env.apiUrl
 export async function getServerSideProps(context) {  
   const res = await fetch(process.env.apiUrl+"/api/getYtPlaylist");
@@ -39,7 +39,8 @@ export default function  YoutubeCards(data){
           items.map(item=>(
             <div key={item.id} className=" shadow-lg shadow-gray-500/50 hover:shadow-gray-500/100  hover:shadow-2xl  hover:scale-95 transition duration-200  ease-in-out w-72 md:mx-2 my-4 mx-auto  bg-black ring-2 ring-transparent hover:ring-gray-100  rounded-xl ">
                  <AnimateWhenInView className="flex flex-col" duration={0.4} delay={0.1}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={50} Iy={10} Fy={0} Fx={0} >   
-                  <div className="w-72 "><img className="object-cover  h-40 w-full  items-center rounded-t-xl sm:rounded-l-xl" src={item.snippet.thumbnails.high.url}></img></div>
+                  <div className="w-72 ">
+                        <Image width={item.snippet.thumbnails.medium.width} layout="responsive" height={item.snippet.thumbnails.medium.height} priority   alt={item.snippet.title}  quality={100} className="object-cover  h-40 w-full  items-center rounded-t-xl sm:rounded-l-xl" src={item.snippet.thumbnails.high.url}></Image></div>
                   <div className="w-72 rounded-b-xl  bg-black text-slate-50 shadow-lg ">
                         <div className="mt-3 px-4"><p className="font-semibold text-lg  line-clamp-2">{item.snippet.title}</p> </div>
                         <div className="mt-2 px-4  justify-start space-x-3 "><a className="flex flex-row" href={`https://www.youtube.com/channel/${item.snippet.videoOwnerChannelId}`}><p className="font-medium text-base truncate mb-2 my-auto">From: {item.snippet.videoOwnerChannelTitle}</p><img className=" w-5 h-5 ml-2" src="./svg/share_move_black.svg" /></a>  </div>   
