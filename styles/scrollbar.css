@@ -4,7 +4,7 @@
 }
 ::-webkit-scrollbar-target {
           background-color: red;
-          opacity: 0;
+          opacity: 0.5;
 
 }
 ::-webkit-scrollbar-thumb {

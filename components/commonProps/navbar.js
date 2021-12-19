@@ -34,17 +34,17 @@ const nonAstheticClass = " font-extrabold font-OpenSans py-8 sticky top-0 z-0 fl
 }
 function Left({path}){
   
-const classOnActive = path=="/about"? " font-mono font-black text-black "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95 rotate-0 hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out opacity-100 uppercase text-opacity-100 text-base md:text-lg  tracking-widest transition-opacity delay-75 duration-300 ease-in-out "
-                                    : " font-mono font-black text-white "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95 rotate-0 hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out opacity-100 uppercase text-opacity-100 text-base md:text-lg  tracking-widest transition-opacity delay-75 duration-300 ease-in-out ";
-const classOnInactive = path=="/about"? " text-black "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95  hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out hover:opacity-100 opacity-50  uppercase text-opacity-90 text-base md:text-sm tracking-wide md:tracking-wide transition-opacity delay-75 duration-300 ease-in-out "
-                                      : " text-white "+" hover:border-l-2 pl-2 hover:border-gray-50 hover:border-opacity-80  scale-95  hover:scale-100 hover:text-lg transition-transform duration-300 ease-in-out hover:opacity-100 opacity-50  uppercase text-opacity-90 text-base md:text-sm tracking-wide md:tracking-wide transition-opacity delay-75 duration-300 ease-in-out ";
-
+  const classOnActive = path=="/about"? "     -translate-x-2 font-mono font-black text-black "+" uppercase text-lg md:text-xl "
+  : "     font-mono font-black text-white "+" -translate-x-2 uppercase text-lg ";
+const classOnInactive = path=="/about"? "     text-black "+" uppercase text-sm text-opacity-70 "
+                                      : "     text-white "+" uppercase text-sm text-opacity-70 ";
+const anma = "hover:-translate-x-2  hover:scale-105 transition-transform duration-200 ease-in"
 return (
     <div>
       <ul>
         {
           List.map((item)=>(
-            <div key={item.key} className={ item.url === path ? classOnActive : classOnInactive+" "} >
+            <div key={item.key} className={ item.url === path ? classOnActive+anma : classOnInactive+anma} >
             <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={-60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
             <Link  href={item.url}><a>{item.name}</a></Link>
             </AnimateWhenInView>
@@ -63,8 +63,8 @@ function Right({path}){
     <div className="flex flex-col  justify-around  items-center ">
         <div className={path == "/about" ? "hidden" :  "block" }>
         <Link href="https://github.com/TerranKartikTellus/"><a>
-         <AnimateWhenInView duration={0.4} delay={0.3}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
-          <div>
+         <AnimateWhenInView duration={0.4} delay={0.3}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
+          <div  className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/github.svg"} />  
           </div>
              </AnimateWhenInView>
@@ -73,9 +73,9 @@ function Right({path}){
         
         
         <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
-          <AnimateWhenInView duration={0.4} delay={0.4}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+          <AnimateWhenInView duration={0.4} delay={0.4}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
         
-          <div >
+          <div  className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/instagram.svg"} />
           </div>
              </AnimateWhenInView>
@@ -84,9 +84,9 @@ function Right({path}){
      
       
        <Link href="mailto:terrankartiktellus@gmail.com"><a>
-         <AnimateWhenInView duration={0.4} delay={0.5}  Iopacity={0} Fopacity={1} Ix={60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
+         <AnimateWhenInView duration={0.4} delay={0.5}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
         
-          <div>
+          <div className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/google.svg"} />
           </div>
              </AnimateWhenInView>
@@ -100,19 +100,19 @@ function Right({path}){
 ------------------------- */}
         <div className={path == "/about" ? "block" :  "hidden" }>
         <Link href="https://github.com/TerranKartikTellus/"><a>
-          <div>
+          <div className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className="invert rounded-full mt-1  w-7 h-7 md:w-8 md:h-8" src={"/svg/github.svg"} />  
           </div></a>
         </Link>
     
         <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
-          <div >
+          <div  className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className="invert  mt-1  w-7 h-7 md:w-8 md:h-8" src={"/svg/instagram.svg"} />
           </div></a>
         </Link>
        
         <Link href="mailto:terrankartiktellus@gmail.com"><a>
-          <div>
+          <div className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className="invert rounded-full mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/google.svg"} />
           </div></a>
         </Link>
