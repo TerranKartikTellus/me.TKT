@@ -18,7 +18,7 @@ export default function Contact(){
 
 
   return(
-     <div   className=" p-3 pt-5 md:p-11 ">
+     <div   className="lg:my-72 p-3 pt-5 md:p-11 ">
               <div className="flex flex-row justify-between">
                         <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Contact</h1>
                        

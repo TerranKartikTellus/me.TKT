@@ -5,7 +5,7 @@ import SmallIconInViewAnimation from "/components/animation/WhenInView/SmallCirc
 export default function Work(){
   return(
     
-     <div className=" p-3 pt-5 md:p-11 ">
+     <div className="hidden p-3 pt-5 md:p-11 ">
       <Head>
 
     </Head>

@@ -16,7 +16,7 @@ export default function Blog({data}){
   }
 
   return(
-     <div className="block   bg-gray-200  p-3 pt-5 md:p-11 ">
+     <div className="block mt-80  bg-gray-200  p-3 pt-5  ">
               <div className="flex flex-row p-5 justify-between">
                         <AnimateWhenInView duration={0.4} delay={0}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={-60} Iy={0} Fy={0} Fx={0} >    
                             <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Recommendations</h1>
@@ -27,13 +27,16 @@ export default function Blog({data}){
                             </Link>
                         </AnimateWhenInView>
               </div>
-             <div className="flex flex-col  p-3 pt-3 md:p-3 ">
-                   <div className="flex overflow-x-scroll  hide-scroll-bar " >
+             <div className="flex flex-row  p-3 pt-3 md:p-3 ">
+               <div className="flex overflow-x-scroll  hide-scroll-bar " >
                      <div className="flex flex-nowrap  scroll-smooth snap-x snap-always"    >
+                       <div className="w-72 h-52 py-32  text-center px-10 text-base font-medium my-5">
+                          The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff. </div>
+                   
                 { 
                   items.map(e=>(
-
-                      <div key={e.id} className="snap-center   block p-4 scale-95 hover:scale-90 transition-transform  ease-in-out duration-100 bg-opacity-95 ">
+                      
+                      <div key={e.id} className="snap-center   block p-4 scale-90  transition-transform  ease-in-out duration-100 bg-opacity-95 ">
                          <AnimateWhenInView duration={0.2} delay={0}  Iopacity={0} Fopacity={1} Is={0.8} Fs={1} Ix={60} Iy={10} Fy={0} Fx={0} >    
                        
                          <div
