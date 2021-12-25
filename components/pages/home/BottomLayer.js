@@ -9,7 +9,7 @@ export default function BottomLayer(){
 
 
   return(
-      <div className="mt-36 space-x-2 tracking-wide hover: transition-transform ease-in-out duration-150  font-OpenSans md:mt-44 flex flex-row h-20 w-11/12  text-slate-200 justify-center">
+      <div className=" space-x-2 tracking-wide hover: transition-transform ease-in-out duration-150  font-OpenSans  flex flex-row h-20 w-11/12  text-slate-200 justify-center">
         
         <div className="block md:hidden text-white  w-80">
           <div className="text-white text-base  text-center h-10 my-4">

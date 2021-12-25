@@ -27,11 +27,14 @@ export default function Blog({data}){
                             </Link>
                         </AnimateWhenInView>
               </div>
-             <div className="flex flex-row  p-3 pt-3 md:p-3 ">
+              <div className=" lg:px-44  text-center px-10 text-base font-medium my-5">
+                          The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.
+              </div>
+             <div className="flex flex-row p-3 pt-3 md:p-3 ">
+
                <div className="flex overflow-x-scroll  hide-scroll-bar " >
                      <div className="flex flex-nowrap  scroll-smooth snap-x snap-always"    >
-                       <div className="w-72 h-52 py-32  text-center px-10 text-base font-medium my-5">
-                          The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff. </div>
+                       
                    
                 { 
                   items.map(e=>(
@@ -46,9 +49,9 @@ export default function Blog({data}){
                             
                             <div  className="pb-5 scale-95 mx-auto sm:mx-0 w-full lg:max-w-full  ">
                                <Link href={`https://www.youtube.com/watch?v=${e.snippet.resourceId.videoId}`} ><a target="_blank"  className="" >
-                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl hover:drop-shadow-md shadow-lg shadow-gray-400/90 hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
+                               <div className="bg-gray-100 bg-opacity-25 rounded-tr-3xl rounded-bl-3xl hover:drop-shadow-md shadow-gray-400/50 shadow-lg  hover:shadow-gray-400/90 hover:shadow-md   p-3 hover:translate-y-1 hover:translate-x-1 transition duration-300 ease-in-out opacity-100 flex flex-col ">
                                 <div className="h-40  rounded-tr-3xl   shadow-md">
-                               <Image width={e.snippet.thumbnails.medium.width} layout="responsive" height={e.snippet.thumbnails.medium.height} priority   alt={e.snippet.title}  quality={100} className="object-cover " src={e.snippet.thumbnails.medium.url}></Image>
+                               <Image width={e.snippet.thumbnails.medium.width} layout="responsive" height={e.snippet.thumbnails.medium.height} loading="eager"   alt={e.snippet.title}  quality={100} className="object-cover rounded-tr-2xl" src={e.snippet.thumbnails.medium.url}></Image>
                                 </div>
                                <div className="h-56  py-7 px-10  bg-gray-900 rounded-bl-3xl  flex flex-col justify-between leading-normal">
                                 <div className="mb-8 ">

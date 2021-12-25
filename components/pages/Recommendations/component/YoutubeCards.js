@@ -30,17 +30,19 @@ export default function  YoutubeCards(data){
   }
 
       return(
+      
       <div>
             <AnimateWhenInView duration={0.4} delay={0.7}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={0} Iy={10} Fy={0} Fx={0} >   
               <div className="text-slate-100 text-lg font-medium tracking-wider text-center mt-5 mb-8">A Humbling and Character-Building experience </div>
             </AnimateWhenInView>
       <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  scroll-smooth ">
-      {   
+      
+      {   items ?
           items.map(item=>(
             <div key={item.id} className=" shadow-lg shadow-gray-500/50 hover:shadow-gray-500/100  hover:shadow-2xl  hover:scale-95 transition duration-200  ease-in-out w-72 md:mx-2 my-4 mx-auto  bg-black ring-2 ring-transparent hover:ring-gray-100  rounded-xl ">
                  <AnimateWhenInView className="flex flex-col" duration={0.4} delay={0.1}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={50} Iy={10} Fy={0} Fx={0} >   
                   <div className="w-72 ">
-                        <Image width={item.snippet.thumbnails.medium.width} layout="responsive" height={item.snippet.thumbnails.medium.height} priority   alt={item.snippet.title}  quality={100} className="object-cover  h-40 w-full  items-center rounded-t-xl sm:rounded-l-xl" src={item.snippet.thumbnails.high.url}></Image></div>
+                        <Image width={item.snippet.thumbnails.medium.width} layout="responsive" height={item.snippet.thumbnails.medium.height} priority   alt={item.snippet.title}  quality={100} className="object-cover  h-40 w-full  items-center rounded-t-xl sm:rounded-lb-xl" src={item.snippet.thumbnails.high.url}></Image></div>
                   <div className="w-72 rounded-b-xl  bg-black text-slate-50 shadow-lg ">
                         <div className="mt-3 px-4"><p className="font-semibold text-lg  line-clamp-2">{item.snippet.title}</p> </div>
                         <div className="mt-2 px-4  justify-start space-x-3 "><a className="flex flex-row" href={`https://www.youtube.com/channel/${item.snippet.videoOwnerChannelId}`}><p className="font-medium text-base truncate mb-2 my-auto">From: {item.snippet.videoOwnerChannelTitle}</p><img className=" w-5 h-5 ml-2" src="./svg/share_move_black.svg" /></a>  </div>   
@@ -70,7 +72,7 @@ export default function  YoutubeCards(data){
                  </AnimateWhenInView>
             </div>
           ))
-
+          : <div className="h-screen w-screen flex justify-center item-center">Loading</div>
           
       }
       {/* <div  className="cursor-pointer hover:bg-slate-50 text-white hover:text-black w-72 rounded-full h-72 p-32 border-2 border-red-500 ring-4 ring-white transition ease-in-out duration-150 ">

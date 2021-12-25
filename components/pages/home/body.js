@@ -6,8 +6,8 @@ import BottomLayer from "./BottomLayer"
 
 export default function Body({data}){
   return(
-   <div className=" w-screen bg-transparent flex justify-center   ">  
-    <div className="flex flex-col  items-center    w-10/12 md:w-3/6 ">
+   <div className=" w-screen  bg-transparent flex justify-center   ">  
+    <div className="flex flex-col   items-center    w-10/12 md:w-3/6 ">
       
       <div className="flex flex-col items-center text-slate-100 mt-12">
         <SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.4} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}>
@@ -34,8 +34,8 @@ export default function Body({data}){
       
       
       </div>
-      
-      <div className="mb-4 pb-4 flex-grow ">
+      <div className="py-16 lg:py-32"> </div>
+      <div className=" pb-4">
       <Scale initialScale={1.2} animateScale={0.9} exitScale={0.8} animateDelay={0.7} animateDuration={1} >
       <SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.7} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}>
         <BottomLayer />
