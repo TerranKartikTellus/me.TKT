@@ -28,7 +28,7 @@ function AboutContent(){
 const [state, setstate] = React.useState("");
 
   return(
-    <div className="flex flex-col  mt-72  md:p-11 p-6 px-8 ">
+    <div className="flex flex-col  mt-40  md:p-11 p-6 px-8 ">
                   
                   <div className=" flex flex-row justify-between">
                         

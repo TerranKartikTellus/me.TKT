@@ -34,8 +34,8 @@ export default function Body({data}){
       
       
       </div>
-      <div className="py-16 lg:py-32"> </div>
-      <div className=" pb-4">
+      <div className="py-16  lg:py-32"> </div>
+      <div className=" pb-0">
       <Scale initialScale={1.2} animateScale={0.9} exitScale={0.8} animateDelay={0.7} animateDuration={1} >
       <SlideVr initialOpacity={0} animateOpacity={1} exitOpacity={1} animateDelay={0.7} animateDuration={0.5} initialLocation={40} animateLocation={0} exitLocation={0}>
         <BottomLayer />
