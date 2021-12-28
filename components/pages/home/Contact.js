@@ -97,7 +97,7 @@ return(
                 maxLength: 50
               })
            }  
-           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
+           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-neutral-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
            />
            {errors.name && errors.name.type === "required" && (
             <span role="alert"><br/>Forgot to write your Name !</span>
@@ -119,7 +119,7 @@ return(
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
               })
            }  
-           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
+           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-neutral-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
            />
           {errors.email && errors.email.type === "required" && (
             <span role="alert"><br/>Forgot to write Email !</span>
@@ -145,7 +145,7 @@ return(
                 maxLength: 1000
               })
            }  
-           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
+           className={`tracking-wider ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-neutral-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
            />
           {errors.message && errors.message.type === "required" && (
             <span role="alert"><br/>Write me a message !</span>

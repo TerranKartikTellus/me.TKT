@@ -2,33 +2,21 @@ import Scale from "/components/animation/scale";
 import SlideVr from "/components/animation/slideVertically";
 import SlideHr from "/components/animation/slideHorizontally";
 
-
 import React from "react";
-
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
-
-
 export default function About(){
-
-
   return(
-  
   <div className="md:relative md:z-20  text-gray-700">
-    
     <div  className="bg-gray-200">
     <AboutContent  />
     </div>
-
   </div>
-  
   );
 }
-
 function AboutContent(){
-const [state, setstate] = React.useState("");
-
+ const [state, setstate] = React.useState("");
   return(
-    <div className="flex flex-col  mt-40  md:p-11 p-6 px-8 ">
+    <div className=" flex flex-col  mt-40  md:p-11 p-6 px-8 ">
                   
                   <div className=" flex flex-row justify-between">
                         
@@ -144,6 +132,8 @@ const [state, setstate] = React.useState("");
               </div>
               </section>
               
+               
     </div>
   );
 }
+

@@ -3,7 +3,7 @@ import Link from "next/link"
 import Head from "next/head"
 import Router from 'next/router'
 import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIconAnimation"
-
+import { useInView } from 'react-intersection-observer';
                         
 const List = [
 {"id":0,"name":"Home" ,           "url":"/"},
@@ -20,16 +20,23 @@ const router = useRouter()
 const path = router.asPath ;
 
 
-const nonAstheticClass = " font-extrabold font-OpenSans py-8 sticky top-0 z-0 flex flex-row justify-between px-4 lg:px-20 ";
+const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0,
+  })
+
+
+
+const nonAstheticClass = "w-screen z-50 font-extrabold font-OpenSans py-8 min-w-full fixed top-0 left-0 flex flex-row justify-between px-4 lg:px-20 ";
   return (
-    <div className={path == "/about" 
+    <section  className={path == "/about" 
     ? " text-gray-900 bg-gradient-to-b from-slate-50 to-transparent "+nonAstheticClass 
     : " text-gray-200 bg-gradient-to-b from-slate-900 to-transparent "+nonAstheticClass }>
        
       <div><Left  path={path}></Left></div>
       <div><Right path={path}></Right></div>
      
-    </div>
+    </section>
   );
 }
 function Left({path}){
@@ -48,7 +55,7 @@ return (
           List.map((item)=>(
             <div key={item.key} className={ item.url === path ? classOnActive+anma : classOnInactive+anma} >
             <AnimateWhenInView duration={0.4} delay={0.125*(item.id)/2}  Iopacity={0} Fopacity={1} Ix={-60*(1+0*item.id*2)} Iy={0} Fy={0} Fx={0} >
-            <Link  href={item.url}><a >{item.name}</a></Link>
+            <Link   href={item.url}><a >{item.name}</a></Link>
             </AnimateWhenInView>
             </div>
           ))  
@@ -64,7 +71,7 @@ function Right({path}){
   return (
     <div className="flex flex-col  justify-around  items-center ">
         <div className={path == "/about" ? "hidden" :  "block" }>
-        <Link href="https://github.com/TerranKartikTellus/"><a>
+        <Link  href="https://github.com/TerranKartikTellus/"><a>
          <AnimateWhenInView duration={0.4} delay={0.3}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
           <div  className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className=" mt-1 w-7 h-7  md:w-8 md:h-8" src={"/svg/github.svg"} />  
@@ -74,7 +81,7 @@ function Right({path}){
         </Link>
         
         
-        <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
+        <Link  href="https://www.instagram.com/grew_up_at__midnight/"><a>
           <AnimateWhenInView duration={0.4} delay={0.4}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
         
           <div  className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
@@ -85,7 +92,7 @@ function Right({path}){
         </Link>
      
       
-       <Link href="mailto:terrankartiktellus@gmail.com"><a>
+       <Link  href="mailto:terrankartiktellus@gmail.com"><a>
          <AnimateWhenInView duration={0.4} delay={0.5}  Iopacity={0} Fopacity={1} Ix={-60} Iy={0} Fy={0} Fx={0} >
         
           <div className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
@@ -101,19 +108,19 @@ function Right({path}){
 {/* 
 ------------------------- */}
         <div className={path == "/about" ? "block" :  "hidden" }>
-        <Link href="https://github.com/TerranKartikTellus/"><a>
+        <Link  href="https://github.com/TerranKartikTellus/"><a>
           <div className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className="invert rounded-full mt-1  w-7 h-7 md:w-8 md:h-8" src={"/svg/github.svg"} />  
           </div></a>
         </Link>
     
-        <Link href="https://www.instagram.com/grew_up_at__midnight/"><a>
+        <Link  href="https://www.instagram.com/grew_up_at__midnight/"><a>
           <div  className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className="invert  mt-1  w-7 h-7 md:w-8 md:h-8" src={"/svg/instagram.svg"} />
           </div></a>
         </Link>
        
-        <Link href="mailto:terrankartiktellus@gmail.com"><a>
+        <Link  href="mailto:terrankartiktellus@gmail.com"><a>
           <div className='hover:-translate-x-2 transition-transform duration-200 ease-in'>
             <img className="invert rounded-full mt-1  w-7 h-7 md:w-9 md:h-9" src={"/svg/google.svg"} />
           </div></a>

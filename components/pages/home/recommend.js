@@ -16,7 +16,7 @@ export default function Blog({data}){
   }
 
   return(
-     <div className="block mt-80  bg-gray-200  p-3 pt-5  ">
+     <div className="block   bg-gray-200  p-3 pt-5  ">
               <div className="flex flex-row p-5 justify-between">
                         <AnimateWhenInView duration={0.4} delay={0}  Iopacity={0} Fopacity={1} Is={1} Fs={1} Ix={-60} Iy={0} Fy={0} Fx={0} >    
                             <h1 className="tracking-wide font-semibold text-2xl sm:text-3xl md:text-4xl">Recommendations</h1>

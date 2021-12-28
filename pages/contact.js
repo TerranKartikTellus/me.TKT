@@ -9,39 +9,39 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from "next/head"
 
+
 export default function Contact(){
   return(
-    <div className="">
-      <Head>
-       
-        <title>Contact | Terran Kartik Tellus </title>
-        <meta name="description" content="Always good to hear from you, feel free to get connected any time !" />
-        <link rel="icon" href="/svg/favicon.svg" />
-       
-        <meta charset="utf-8"/>
-        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <section className="">
+     
+          <div className="">
+              <Head>
+                <title>Contact | Terran Kartik Tellus </title>
+                <meta name="description" content="Always good to hear from you, feel free to get connected any time !" />
+                <link rel="icon" href="/svg/favicon.svg" />
+                <meta charset="utf-8"/>
+                <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+              </Head>
+             <div className=" md:p-11 ">
+                    <div className="scale-110 hidden md:block text-center text-gray-100 ">  
+                     <h1 className="text-2xl font-semibold">Hi Terran here ! <br/></h1>
+                     <h2 className="opacity-95 font-normal text-xl">Always good to hear from people like you</h2>
+                     <h3 className="opacity-90 font-normal text-base">I am Looking forward to read from u !</h3>
+                    </div>
+                           <div className=" flex scale-90 flex-col sm:flex-row justify-center item-center">       
+                             <div className="hidden lg:block w-56 bg-transparent"></div>
+                             <img className="opacity-80 lg:scale-50 mx-auto  w-2/12 " src="/svg/contactico.svg"></img>
+                             <div className="mx-auto w-10/12 sm:w-10/12 md:w-8/12 lg:w-6/12 ">
+                               <ContactHere />
+                             </div>
+                           </div>
+                   <IconLayer />
+            </div>
+         </div>
+      
+    </section>
     
-      </Head>
-
-     <div className=" md:p-11 ">
-              <div className="scale-110 hidden md:block text-center text-gray-100 ">  
-               <h1 className="text-2xl font-semibold">Hi Terran here ! <br/></h1>
-               <h2 className="opacity-95 font-normal text-xl">Always good to hear from people like you</h2>
-               <h3 className="opacity-90 font-normal text-base">I am Looking forward to read from u !</h3>
-               
-              </div>
-              <div className=" flex scale-90 flex-col sm:flex-row justify-center item-center">       
-                <img className="opacity-80 lg:scale-50 mx-auto w-2/12 " src="./svg/contactico.svg"></img>
-                <div className="mx-auto w-10/12 sm:w-10/12 md:w-8/12 lg:w-6/12 ">
-                  <ContactHere />
-                </div>
-              </div>
-              
-              <IconLayer />
-    </div>
-    </div>
   );
 }
 
@@ -114,7 +114,7 @@ return(
                 maxLength: 50
               })
            }  
-           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-neutral-900 ${errors.name && "ring-2 ring-red-500 outline-none"}`}
            />
            {errors.name && errors.name.type === "required" && (
             <span role="alert"><br/>Forgot to write your Name !</span>
@@ -136,7 +136,7 @@ return(
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
               })
            }  
-           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-neutral-900 ${errors.email && "ring-2 ring-red-500 outline-none"}`}
            />
           {errors.email && errors.email.type === "required" && (
             <span role="alert"><br/>Forgot to write Email !</span>
@@ -162,7 +162,7 @@ return(
                 maxLength: 1000
               })
            }  
-           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-gray-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
+           className={`ring-1 ring-gray-400 focus:ring-1 focus:ring-lime-200 outline-none w-full md:ml-20 p-2 my-1 text-current placeholder-gray-200 font-semibold bg-neutral-900 ${errors.message && "ring-2 ring-red-500 outline-none"}`}
            />
           {errors.message && errors.message.type === "required" && (
             <span role="alert"><br/>Write me a message !</span>
@@ -220,16 +220,16 @@ function IconLayer(){
                   <p className="h-3"></p>
                 }
                 </div>
-                <div className=" flex  flex-row justify-around">
-                      <div  className="flex flex-col justify-center items-center">
+                <div className=" flex  flex-row mx-auto">
+                      <div  className=" mx-5 flex flex-col justify-center items-center">
                         <a href="https://www.instagram.com/grew_up_at__midnight/"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/instagram.svg"></img>
                         </a>
                       </div>
-                      <div  className="flex flex-col justify-center items-center">
+                      <div  className=" mx-5 flex flex-col justify-center items-center">
                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=terrankartiktellus@gmail.com&tf=cm&body=Hello%20Mr.%20Terran,"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/google.svg"></img>
                        </a>
                       </div>
-                      <div  className="flex flex-col justify-center items-center">
+                      <div  className=" mx-5 flex flex-col justify-center items-center">
                        <a href="https://github.com/TerranKartikTellus"><img className="hover:cursor-pointer h-6 w-6 md:h-7 md:w-7" src="/svg/github.svg"></img>
                        </a>
                       </div>

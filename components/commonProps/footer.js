@@ -6,7 +6,7 @@ export default function Footer(){
 const router = useRouter()
 const path = router.asPath ;      
           return(
-          <div className="">
+          <footer className="">
                               
         
           <div className=" bottom-0 z-0    my-16 flex md:flex-row md:justify-evenly  flex-col space-y-2 justify-center items-center  w-screen text-xs md:text-sm">
@@ -42,11 +42,11 @@ const path = router.asPath ;
                               <div className="w-px h-5 mx-2 bg-slate-200"></div>
                               <a href="/blog"><div className=" hover:rounded   hover:scale-110">Blog             </div> </a>
                               
-                              <a href="/about"><div className={ path === "/about" ? "bg-gray-900"+" rounded hover:ring-2 hover:ring-black text-neutral-100 p-3 shadow-xl hover:bg-gray-100 hover:text-gray-900"
-                                        :" rounded bg-gray-100 text-black p-3 shadow-xl shadow-neutral-100/20 hover:bg-gray-800 hover:text-gray-200 hover:ring-2 hover:ring-white "}>About</div> </a>             
+                              <a href="/about"><div className={ path === "/about" ? "bg-neutral-900"+" rounded hover:ring-2 hover:ring-black text-neutral-100 p-3 shadow-xl hover:bg-gray-100 hover:text-gray-900"
+                                        :" rounded bg-gray-100 text-black p-3 shadow-xl shadow-neutral-100/20 hover:bg-neutral-900 hover:text-gray-200 hover:ring-2 hover:ring-white "}>About</div> </a>             
                     </div>
           </div>
-            </div>
+            </footer>
           );
 }
 

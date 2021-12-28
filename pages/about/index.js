@@ -5,7 +5,10 @@ import AnimateWhenInView from "/components/animation/WhenInView/SmallCircularIco
 import Head from "next/head"
 
 export default function about(){
-  return(<div className="mt-0 flex flex-row justify-center lg:max-w-screen-2xl text-gray-100 mx-auto md:mx-28 lg:mx-64">
+  return(
+  <section>
+    
+    <div className="mt-0 flex flex-row justify-center item-center lg:max-w-screen-2xl text-gray-100 mx-auto md:mx-28 lg:mx-64">
     <Head>
         <title>Contact | TKT</title>
         <link rel="icon" href="/svg/favicon.svg" />
@@ -16,9 +19,13 @@ export default function about(){
 
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     </Head>
-
+    
     <About className="" ></About>
-  </div>)
+    
+  </div>
+  
+  </section>
+  )
 }
 
 function CircleGlow(){
@@ -30,9 +37,9 @@ function CircleGlow(){
 function About(){
   return(
   
-  <div className=" md:relative md:z-20  text-gray-100 hover:ring-2 hover:ring-neutral-200 transition ease-in-out duration-300 ">
+  <div className="flex justify-center item-center md:relative md:z-20  text-gray-100 0 transition ease-in-out duration-300 ">
     
-    <div  className="bg-neutral-800 md:bg-gray-900 ">
+    <div  className="bg-neutral-900 ">
     <AboutContent   />
     
     </div>
@@ -59,7 +66,7 @@ function AboutContent(){
 const [state, setstate] = React.useState("");
 
   return(
-    <div className="flex flex-col    md:p-11 p-6 px-8">
+    <div className="flex flex-col  item-center justify-center lg:mt-52 lg:mb-11 mt-36  md:p-11 p-6 px-8">
                   
                   <div className=" flex flex-row justify-between">
                         
