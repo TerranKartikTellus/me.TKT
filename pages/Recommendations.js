@@ -32,7 +32,7 @@ const [state, setstate] = useState("youtube");
           return(
       <section>
           
-              <div className="relative z-0 bg-black  max-w-screen  md:mx-auto lg:w-8/12 md:w-10/12">                                             
+              <div className="relative z-0 bg-neutral-900  max-w-screen  md:mx-auto lg:w-8/12 md:w-10/12">                                             
                                 <Head>
                                   <title>Recommendations | TKT</title>
                                   <link rel="icon" href="/svg/favicon.svg" />
