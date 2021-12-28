@@ -23,7 +23,7 @@ export default function Contact(){
                 <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
               </Head>
-             <div className=" md:p-11 ">
+             <div className=" md:p-11 lg:mt-52 lg:mb-11 mt-36">
                     <div className="scale-110 hidden md:block text-center text-gray-100 ">  
                      <h1 className="text-2xl font-semibold">Hi Terran here ! <br/></h1>
                      <h2 className="opacity-95 font-normal text-xl">Always good to hear from people like you</h2>
@@ -47,7 +47,7 @@ export default function Contact(){
 
 function ContactHere(){
   return(
-     <div className="lg:mt-52 lg:mb-11 mt-36 p-3 pt-5 md:p-11 ">
+     <div className=" p-3 pt-5 md:p-11 ">
               
               <div className="flex scale-90 flex-col md:flex-row justify-center item-center">       
                 
