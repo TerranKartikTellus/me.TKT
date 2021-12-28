@@ -49,7 +49,7 @@ export default function  YoutubeCards(data){
 function List({items}){
  
       return (
-      <div className=" text-white sm:grid sm:grid-cols-1 md:grid-cols-2 md:gap-2 mx-auto  z-50">  
+      <div className=" text-white sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 mx-auto  z-50">  
        
                   {   items ?
                       items.map(item=>(
