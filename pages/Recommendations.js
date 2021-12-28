@@ -41,7 +41,7 @@ const [state, setstate] = useState("youtube");
                                   <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/>
                                   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
                                 </Head>
-                                <div className="max-w-full bg-black">
+                                <div className="max-w-full bg-black lg:mt-52 lg:mb-11 mt-36">
                                       <div className="w-screen flex  flex-col ">
                                             <div className="w-screen  flex overflow-x-scroll hide-scroll-bar ">
                                                 <div className="w-screen flex justify-start pt-6 pb-14  flex-nowrap  px-32 sm:px-48 md:px-60 lg:px-96">

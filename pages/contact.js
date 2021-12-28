@@ -47,7 +47,7 @@ export default function Contact(){
 
 function ContactHere(){
   return(
-     <div className=" p-3 pt-5 md:p-11 ">
+     <div className="lg:mt-52 lg:mb-11 mt-36 p-3 pt-5 md:p-11 ">
               
               <div className="flex scale-90 flex-col md:flex-row justify-center item-center">       
                 
